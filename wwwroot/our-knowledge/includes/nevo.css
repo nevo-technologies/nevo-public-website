@@ -1,0 +1,294 @@
+<STYLE TYPE="text/css" rel="stylesheet">
+
+BODY
+{
+    font-size : 9pt;
+    line-height : 10pt;
+    font-family : Arial, Verdana, Geneva, Helvetica, sans-serif;
+}
+A
+{
+    color: #DFF4FB;
+    text-decoration: none;
+    font-family : Arial, Verdana, Geneva, Helvetica, sans-serif;
+    font-size : 9pt;
+    line-height : 10pt;
+}
+A:visited
+{
+    color: #DFF4FB;
+    text-decoration: none;
+    font-family : Arial, Verdana, Geneva, Helvetica, sans-serif;
+    font-size : 9pt;
+    line-height : 10pt;
+}
+A:hover
+{
+    color: #EFDE7B;
+    text-decoration: underline;
+    font-family : Arial, Verdana, Geneva, Helvetica, sans-serif;
+    font-size : 9pt;
+    line-height : 10pt;
+}
+
+A.formore
+{
+    color: #EFDE7B;
+    text-decoration: none;
+    font-family : Arial, Verdana, Geneva, Helvetica, sans-serif;
+    font-size : 9pt;
+    line-height : 10pt;
+}
+A.formore:visited
+{
+    color: #EFDE7B;
+    text-decoration: none;
+    font-family : Arial, Verdana, Geneva, Helvetica, sans-serif;
+    font-size : 9pt;
+    line-height : 10pt;
+}
+A.formore:hover
+{
+    color: #DFF4FB;
+    text-decoration: none;
+    font-family : Arial, Verdana, Geneva, Helvetica, sans-serif;
+    font-size : 9pt;
+    line-height : 10pt;
+}
+
+
+A.obvious
+{
+    color: #DFF4FB;
+    text-decoration: underline;
+    font-family : Arial, Verdana, Geneva, Helvetica, sans-serif;
+    font-size : 9pt;
+    line-height : 10pt;
+}
+A.obvious:visited
+{
+    color: #DFF4FB;
+    text-decoration: underline;
+    font-family : Arial, Verdana, Geneva, Helvetica, sans-serif;
+    font-size : 9pt;
+    line-height : 10pt;
+}
+A.obvious:hover
+{
+    color: #EFDE7B;
+    text-decoration: underline;
+    font-family : Arial, Verdana, Geneva, Helvetica, sans-serif;
+    font-size : 9pt;
+    line-height : 10pt;
+}
+
+A.listpick
+{
+    color: #DFF4FB;
+    text-decoration: underline;
+    font-family : Arial, Verdana, Geneva, Helvetica, sans-serif;
+    font-size : 11pt;
+    line-height : 15pt;
+}
+A.listpick:visited
+{
+    color: #DFF4FB;
+    text-decoration: underline;
+    font-family : Arial, Verdana, Geneva, Helvetica, sans-serif;
+    font-size : 11pt;
+    line-height : 15pt;
+}
+A.listpick:hover
+{
+    color: #EFDE7B;
+    text-decoration: underline;
+    font-family : Arial, Verdana, Geneva, Helvetica, sans-serif;
+    font-size : 11pt;
+    line-height : 15pt;
+}
+
+A.nevotop
+{
+    color: #EFDE7B;
+    text-decoration: none;
+    font-family : Arial, Verdana, Geneva, Helvetica, sans-serif;
+    font-size : 9pt;
+    line-height : 10pt;
+}
+A.nevotop:visited
+{
+    color: #EFDE7B;
+    text-decoration: none;
+    font-family : Arial, Verdana, Geneva, Helvetica, sans-serif;
+    font-size : 9pt;
+    line-height : 10pt;
+}
+A.nevotop:hover
+{
+    color: #EFDE7B;
+    text-decoration: underline;
+    font-family : Arial, Verdana, Geneva, Helvetica, sans-serif;
+    font-size : 9pt;
+    line-height : 10pt;
+}
+
+UL LI        
+{
+    list-style: square;
+   margin-bottom: 0pt;
+   margin-top: 0pt;
+    padding-top: 2pt;
+   padding-bottom: 2pt;
+}
+
+OL LI        
+{
+   margin-bottom: 0pt;
+   margin-top: 0pt;
+    padding-top: 2pt;
+   padding-bottom: 2pt;
+}
+
+UL.navbar LI.navbar       
+{
+    list-style: square;
+    padding-bottom: 3pt;
+    padding-top: 3pt;
+    color:#DFF4FB;
+    font-family : Arial, Verdana, Geneva, Helvetica, sans-serif;
+    font-size : 9pt;
+    line-height : 10pt;
+   margin-bottom: 0pt;
+   
+}
+UL.picklist LI.picklist       
+{
+    list-style: square;
+    padding-bottom: 3pt;
+    padding-top: 3pt;
+    color:#DFF4FB;
+    font-family : Arial, Verdana, Geneva, Helvetica, sans-serif;
+    font-size : 11pt;
+    line-height : 15pt;
+   margin-bottom: 0pt;
+   
+}
+LI.navbarselected       
+{
+    list-style: square;
+    padding-bottom: 3pt;
+    padding-top: 3pt;
+    color:#EFDE7B;
+    font-family : Arial, Verdana, Geneva, Helvetica, sans-serif;
+    font-size : 9pt;
+    line-height : 10pt;
+   margin-bottom: 0pt;
+   
+}
+.bodyBackGround 
+{
+    background-color: #1c759b;
+}
+
+.leaderText {
+    color: #DFF4FB;
+    font-family : Times, Arial, Verdana, Geneva, Helvetica, sans-serif;
+    1letter-spacing: 2;
+    font-size : 15pt;
+    line-height : 32pt;
+    font-weight : bold
+}
+
+.companyNameText {
+    color:#DFF4FB;
+    font-family : Arial, Verdana, Geneva, Helvetica, sans-serif;
+    font-size : 13pt;
+    line-height : 28pt;
+    font-weight : bold
+}
+
+.bodyText {
+    color:#DFF4FB;
+    font-family : Arial, Verdana, Geneva, Helvetica, sans-serif;
+    font-size : 11pt;
+    line-height : 20pt;
+}
+.bodyTextNarrow {
+    color:#DFF4FB;
+    font-family : Arial, Verdana, Geneva, Helvetica, sans-serif;
+    font-size : 11pt;
+    line-height : 15pt;
+}
+.tightBodyText {
+    color:#DFF4FB;
+    font-family : Arial, Verdana, Geneva, Helvetica, sans-serif;
+    font-size : 9pt;
+    line-height : 10pt;
+}
+.tinyTightBodyText {
+    color:#DFF4FB;
+    font-family : Arial, Verdana, Geneva, Helvetica, sans-serif;
+    font-size : 7pt;
+    line-height : 7pt;
+}
+.tightBodyTextWhite {
+    color:#EFDE7B;
+    font-family : Arial, Verdana, Geneva, Helvetica, sans-serif;
+    font-size : 9pt;
+    line-height : 10pt;
+    text-decoration: none;
+}
+.tightBodyTextHidden {
+    color:#1c759b;
+    font-family : Arial, Verdana, Geneva, Helvetica, sans-serif;
+    font-size : 9pt;
+    line-height : 10pt;
+    text-decoration: none;
+}
+
+.listItemSelected {
+    color:#EFDE7B;
+    font-family : Arial, Verdana, Geneva, Helvetica, sans-serif;
+    font-size : 9pt;
+    line-height : 10pt;
+    text-decoration: none;
+    padding-bottom: 4pt;
+    padding-top: 4pt;
+   margin-bottom: 0pt;
+}
+.listText {
+    color:#DFF4FB;
+    font-family : Arial, Verdana, Geneva, Helvetica, sans-serif;
+    font-size : 9pt;
+    line-height : 20pt;
+
+}
+.listText P.desc
+{
+    padding-top : 0pt;
+    padding-bottom: 0pt;
+    margin-top : 0pt;
+    margin-bottom : 0pt;
+    line-height:10pt;
+}
+
+div.designPartner {
+    background-color:#FFFF00;
+    margin-top:10px;
+    padding:3px;
+}
+
+div.designPartner a {
+    font-family:Arial,Verdana,Geneva,Helvetica,sans-serif;
+    font-size:9pt;
+    color:#000000;
+}
+
+div.designPartner a:hover {
+    text-decoration:none;
+    color:#315A94;
+    font-family : Arial, Verdana, Geneva, Helvetica, sans-serif;
+    font-size : 9pt;
+    line-height : 10pt;
+}
+</STYLE>
