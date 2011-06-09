@@ -8,17 +8,9 @@
 
 <% Case "ALL", "1" %>
 
-	At Nevo, we feel it is our responsibility to first understand your challenges, needs,
-	and opportunities, and then to choose or craft the solution that best matches your unique constraints. In order to keep up with the latest industry trends and technological
-	capabilities, we communicate continually with others in the field and maintain
-	strategic affiliations with major industry groups such as the Object Management Group
-	(OMG) DMSL.org UDDI.org and the Association for Computing Machinery (ACM), to name a few.
-
-	</br><img src="/images/pixel.gif" width="1" height="10pt"></br>
-	Although we fearlessly experiment with pre-release products on our own, we protect our clients from the risks involved in working with bleeding-edge technology. Having done
-	extensive research and experienced the learning curve, we recommend and implement
-	solutions only when we have confidence in their long-term viability as well as their
-	appropriateness to the task at hand.
+At Nevo, we feel it is our responsibility to understand your challenges, needs, and opportunities, and then to choose or craft the solution that best matches your unique constraints. In order to keep up with the latest industry trends and technological capabilities, we communicate continually with others in the field and maintain strategic affiliations with major industry groups.
+</br><img src="/images/pixel.gif" width="1" height="10pt"></br>
+Although we fearlessly experiment with pre-release products on our own, we protect our clients from the risks involved in working with bleeding-edge technology. Having done the research and experienced the learning curve, we recommend and implement solutions only when we have confidence in their long-term viability as well as their appropriateness to the task at hand.
 
 <% End Select %>
 
@@ -30,49 +22,61 @@
 	<% End If %>
 
 	Nevo technologists have practical experience in
-	the following proven technologies:
+	the following technologies:
 
 	<table cellspacing=0 cellpadding=0 border=0>
 	<tr><td align="left" valign="top" class="tightBodyText">
 	<ul>
-		     <li>ASP, ASP.NET
-		</li><li>BizTalk
+        <li>Agile Metholdology (SCRUM)
+        </li><li>ASP, ASP.NET
+        </li><li>Business Rule Management (BRM)
 		</li><li>C++
 		</li><li>C#
-		</li><li>CGI
 		</li><li>COM/DCOM
-		</li><li>CORBA
+        </li><li>Confluence
+        </li><li>Continous Integration
+        </li><li>CruiseControl.Net
+        </li><li>Data Replication / Data Distribution (often in the context of occasionally connected applications)
+        </li><li>Dependency Injection / Inversion of Control
 		</li><li>DHTML
-		</li><li>Digital Signatures & PKI
-		</li><li>EAI
+		</li><li>Enterprise Application Integration (EAI)
+        </li><li>Enterprise Architect (modelling tool)
 		</li><li>EJB
-		</li><li>HTML
+        </li><li>Entity Framework
+        </li><li>F# (functional programming)
+        </li><li>Google Gears    
+		</li><li>HTML (including HTML5)
 		</li><li>JSP
+        </li><li>Jira
 		</li><li>Java, J2EE
 		</li><li>Javascript
-		</li><li>Linux
-		</li><li>.NET
-		</li><li>.NET Windows Forms
-		</li>
+		</li><li>LINQ</li>
 	</ul>
 	<td  align="left" valign="top" class="tightBodyText">
 	<ul>
-		     <li>NT / 2000 / XP
-		</li><li>OOD
+        
+        <li>Messaging (MQSeries, MSMQ, WCF)
+        </li><li>N-Tiered Design
+		</li><li>.NET
+		</li><li>.NET Windows Forms
+        </li><li>Nolij (document management)
+		</li><li>Object Oriented Desighn(OOD)
+        </li><li>OR Mapping (Hibernate, nHibernate, iBatis)
 		</li><li>Oracle
-		</li><li>RDBMS
-		</li><li>RMI
+        </li><li>Performance analysis / optimization
+		</li><li>Relational DBMS
+        </li><li>ScrumDesk (Agile / Scrum tool)
 		</li><li>SQLServer
 		</li><li>Servlets
-		</li><li>SOA
+		</li><li>Service Oriented Architectures(SOA)
+        </li><li>Struts / Struts2
 		</li><li>Sybase
 		</li><li>UML
-		</li><li>Unix
+        </li><li>Unit Testing (jUnit / nUnit)
 		</li><li>VBScript
-		</li><li>Visual Basic .NET
-		</li><li>WebLogic
 		</li><li>WebMethods
 		</li><li>WebSphere
+        </li><li>WPF
 		</li><li>XML/XSL/XSLT
 		</li>
 	</ul>

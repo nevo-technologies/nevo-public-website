@@ -82,18 +82,13 @@ from Logan Airport
 </font>
 </br>
 <font class="bodyTextNarrow">
-With the "Big Dig" in process,
-exiting Logan is an adventure that
-changes daily. Exit the airport,
-and take the Sumner tunnel to
-Boston. Stay in the left lane
-throught the tunnel. At the end of
-the tunnel, follow the signs to 93N (up
-the ramp) then stay right and take
-the immediate exit (26) for
-Storrow Drive. Take Storrow to the
-Harvard Square exit, and drive
-straight towards Harvard Square.
+Exit the airport,
+and take the Ted Williams tunnel, through Boston.  
+Take the exit for I90 - the Mass Pike.  Get off the Pike 
+at the Cambridge / Allston exit heading towards Cambridge. 
+Turn left before crossing over the Charles River Take Storrow to the
+very first exit (less than a mile) - the Harvard Square exit. Drive
+straight up JFK street towards Harvard Square.
 Just before you enter Harvard
 Square, turn left onto Brattle
 Street, follow it around to the
@@ -128,19 +123,14 @@ of you to your right.
 Walk straight down the left side of Church St.;
 number 26 is near the end of the block.</br>
 <font class="fromWhereText">from Logan Airport by subway</font>
-</br>Take the shuttle
-bus to the AIRPORT T stop
-(BLUE LINE). Take the BLUE
-LINE inbound four stops to
-GOVERNMENT CENTER.
-Change to the GREEN LINE
-westbound and go one stop to
-PARK STREET. Switch to the
+</br>One the best contributions from the "big dig" is the Silver
+Line.  It functions as a bus around the airport, then goes electric 
+when it enters the Ted Williams tunnel.  Take the Silver Line from your terminal directly to South Station. Switch to the
 RED LINE outbound (toward
-ALEWIFE), go four stops and
+ALEWIFE), go five stops and
 get off at HARVARD. The subway
 ride from Logan Airport
-can take 45 to 60 minutes.
+can take 30 minutes.
 
 <% End Select %>
 

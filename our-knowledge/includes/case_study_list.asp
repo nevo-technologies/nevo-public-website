@@ -31,6 +31,12 @@ sProjectClientIndustry(iJC) = "Sports Equipment Manufacturing"
 sProjectURL(iJC)            = "/our-knowledge/casestudies/AcushnetPopup.asp"
 
 iJC = iJC + 1
+sProjectDescription(iJC)    = "Energy Audit System"
+sProjectClientName(iJC)     = "Conservation Services Group"
+sProjectClientIndustry(iJC) = "Energy Conservation / Efficiency"
+sProjectURL(iJC)            = "/our-knowledge/casestudies/CSG.asp"
+
+iJC = iJC + 1
 sProjectDescription(iJC)    = "Product Recommendation System"
 sProjectClientName(iJC)     = "Berlitz International"
 sProjectClientIndustry(iJC) = "Language Learning Services"
