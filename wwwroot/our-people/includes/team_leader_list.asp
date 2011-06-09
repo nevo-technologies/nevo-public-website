@@ -52,15 +52,6 @@ sTeamLeaderVisible(iTLC) 		= "Y"
 sTeamLeaderEmailImageURL(iTLC) 	= ""
 
 iTLC = iTLC + 1
-sTeamLeaderName(iTLC) 			= "Chris Collier"
-sTeamLeaderSlantPos(iTLC) 		= 11
-sTeamLeaderTitle(iTLC) 			= "Principal"
-sTeamLeaderURL(iTLC) 			= "/our-people/team/ChrisCollier.asp"
-sTeamLeaderEmailImageURL(iTLC) 	= ""
-sTeamLeaderVisible(iTLC) 		= "Y"
-sTeamLeaderEmailImageURL(iTLC) 	= ""
-
-iTLC = iTLC + 1
 sTeamLeaderName(iTLC) 			= "Ethan Jacobson"
 sTeamLeaderSlantPos(iTLC) 		= 11
 sTeamLeaderTitle(iTLC) 			= "Senior Software Architect"
@@ -74,6 +65,15 @@ sTeamLeaderName(iTLC) 			= "Ted Nesson"
 sTeamLeaderSlantPos(iTLC) 		= 3
 sTeamLeaderTitle(iTLC) 			= "Principal"
 sTeamLeaderURL(iTLC) 			= "/our-people/team/TedNesson.asp"
+sTeamLeaderEmailImageURL(iTLC) 	= ""
+sTeamLeaderVisible(iTLC) 		= "Y"
+sTeamLeaderEmailImageURL(iTLC) 	= ""
+
+iTLC = iTLC + 1
+sTeamLeaderName(iTLC) 			= "Rick Giaimo"
+sTeamLeaderSlantPos(iTLC) 		= 3
+sTeamLeaderTitle(iTLC) 			= "Solution Architect"
+sTeamLeaderURL(iTLC) 			= "/our-people/team/RickGiaimo.asp"
 sTeamLeaderEmailImageURL(iTLC) 	= ""
 sTeamLeaderVisible(iTLC) 		= "Y"
 sTeamLeaderEmailImageURL(iTLC) 	= ""

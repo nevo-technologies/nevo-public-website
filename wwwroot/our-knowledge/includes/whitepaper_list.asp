@@ -10,7 +10,7 @@ Dim iJC
 Dim acroLink
 Dim showAcroLink
 
-iWhitePaperCount=9
+iWhitePaperCount=11
 
 Redim sWhitePaperClientName(iWhitePaperCount + 1)
 Redim sWhitePaperURL(iWhitePaperCount + 1)
@@ -22,7 +22,19 @@ iJC = 0
 acroLink = "&nbsp;<a class=""listpick"" href=""javascript:newWindow('http://www.adobe.com/products/acrobat/readstep2.html')"">Acrobat Reader</a>"
 showAcroLink = "N"
 
-// THESES WILL BE LISTED IN THE ORDER BELOW
+// THESE WILL BE LISTED IN THE ORDER BELOW
+
+iJC = iJC + 1
+sWhitePaperClientName(iJC)		= "10X Development: High Performance Software Teams"
+sWhitePaperURL(iJC) 			= "/our-knowledge/whitepapers/High Performance Software Teams.pdf"
+sWhitePaperVisible(iJC) 		= "Y"
+sWhitePaperIsPDF(iJC)			= "Y"
+
+iJC = iJC + 1
+sWhitePaperClientName(iJC)		= "Building a High Performance Team"
+sWhitePaperURL(iJC) 			= "/our-knowledge/whitepapers/Building a High Performance Team.pdf"
+sWhitePaperVisible(iJC) 		= "Y"
+sWhitePaperIsPDF(iJC)			= "Y"
 
 iJC = iJC + 1
 sWhitePaperClientName(iJC)		= "The Requirements Gathering Process"
@@ -33,7 +45,7 @@ sWhitePaperIsPDF(iJC)			= "Y"
 iJC = iJC + 1
 sWhitePaperClientName(iJC)		= "Establishing Effective Processes"
 sWhitePaperURL(iJC) 			= "/our-knowledge/whitepapers/EstablishingEffectiveProcessesPopup.asp"
-sWhitePaperVisible(iJC) 		= "Y"
+sWhitePaperVisible(iJC) 		= "N"
 sWhitePaperIsPDF(iJC)			= "N"
 
 iJC = iJC + 1

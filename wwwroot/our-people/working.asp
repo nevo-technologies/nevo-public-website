@@ -37,7 +37,7 @@ REM or all the content if the All navigator is selected.
 
 <body class="bodyBackGround" marginwidth="0" marginheight="0" topmargin="0" leftmargin="0">
 
-<table cellspacing="0" cellpadding="1" border="0" width="673">
+<table cellspacing="0" cellpadding="1" border="0" width="973">
 <tr><td align=left valign=top>
 
 
