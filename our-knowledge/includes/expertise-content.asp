@@ -25,7 +25,7 @@ Although we fearlessly experiment with pre-release products on our own, we prote
 	the following technologies:
 
 	<table cellspacing=0 cellpadding=0 border=0>
-	<tr><td align="left" valign="top" class="tightBodyText">
+	<tr><td align="left" valign="top" class="tightBodyText" width="240">
 	<ul>
         <li>Agile Metholdology (SCRUM)
         </li><li>ASP, ASP.NET
