@@ -51,7 +51,7 @@ REM or all the content if the All navigator is selected.
 <body marginwidth="0" marginheight="0" topmargin="0" leftmargin="0" background="/images/bg_blue.gif">
 
 
-<table cellspacing=0 cellpadding=1 border="0" width=873>
+<table cellspacing=0 cellpadding=1 border="0" width=973>
 <tr><td align=left valign=top>
 
 
