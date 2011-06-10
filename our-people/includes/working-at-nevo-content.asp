@@ -24,7 +24,7 @@
 	Nevo offers the opportunity to have fun and to learn while working on interesting, challenging technology projects.  Our offices are located in the heart of Harvard Square, affording access to great bookstores, restaurants, and the occasional sunny day picnic along the banks of the Charles River.
 
 	</br><img src="/images/pixel.gif" width="1" height="10pt"></br>
-	If you are great at what you do, if like to learn from your coworkers and share your own knowledge, if you greet new technology with an eager and open mind, if you love the idea of helping clients use technology to make things happen, then you’d enjoy working at Nevo.  See our job openings and send your resume.
+	If you are great at what you do, if you like to learn from your coworkers and share your own knowledge, if you greet new technology with an eager and open mind, if you love the idea of helping clients use technology to make things happen, then you'd enjoy working at Nevo.  See our job openings and send your resume.
 
 <!--
 <% End Select %>
