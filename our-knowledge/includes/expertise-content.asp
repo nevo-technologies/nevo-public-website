@@ -44,18 +44,18 @@ Although we fearlessly experiment with pre-release products on our own, we prote
 		</li><li>EJB
         </li><li>Entity Framework
         </li><li>F# (functional programming)
-        </li><li>Google Gears    
+        </li><li>Google Gears
 		</li><li>HTML (including HTML5)
 		</li><li>JSP
         </li><li>Jira
-		</li><li>Java, J2EE
-		</li><li>Javascript
-		</li><li>LINQ</li>
+		</li><li>Java, J2EE</li>
 	</ul>
 	<td  align="left" valign="top" class="tightBodyText">
 	<ul>
-        
-        <li>Messaging (MQSeries, MSMQ, WCF)
+
+		<li>Javascript
+		</li><li>LINQ</li>
+        </li><li>Messaging (MQSeries, MSMQ, WCF)
         </li><li>N-Tiered Design
 		</li><li>.NET
 		</li><li>.NET Windows Forms
