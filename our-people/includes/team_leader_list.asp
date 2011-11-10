@@ -70,6 +70,15 @@ sTeamLeaderVisible(iTLC) 		= "Y"
 sTeamLeaderEmailImageURL(iTLC) 	= ""
 
 iTLC = iTLC + 1
+sTeamLeaderName(iTLC) 			= "Mick Rookwood"
+sTeamLeaderSlantPos(iTLC) 		= 10
+sTeamLeaderTitle(iTLC) 			= "Principal"
+sTeamLeaderURL(iTLC) 			= "/our-people/team/MickRookwood.asp"
+sTeamLeaderEmailImageURL(iTLC) 	= ""
+sTeamLeaderVisible(iTLC) 		= "Y"
+sTeamLeaderEmailImageURL(iTLC) 	= ""
+
+iTLC = iTLC + 1
 sTeamLeaderName(iTLC) 			= "Rick Giaimo"
 sTeamLeaderSlantPos(iTLC) 		= 3
 sTeamLeaderTitle(iTLC) 			= "Solution Architect"
