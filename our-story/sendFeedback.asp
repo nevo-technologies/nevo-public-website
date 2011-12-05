@@ -54,62 +54,26 @@ SendSubject = sSubject
 
 SendFrom = sUserEmail
 
-	sServerIs = Request.ServerVariables("SERVER_SOFTWARE")
+	rem on 12/5/11 Pete Jaffe removed the "select case" switch that toggled between this 
+	rem and using CDO.Message.  I proved CDONTS.Newmail worked and sent directly to our new Google account
+	rem (it didn't seem to get "trapped" in the @nevo.com Web.com world).  I figured I would just remove
+	rem the other CDO.Message implementation since either it wasn't working, or the original "Select Case"
+	rem wasn't working based on the matching of "Microsoft-IIS/5.0" or "Microsoft-IIS/5.1" (which probably makes
+	rem sense given web.com is supposedly running IIS 7 for the hosted websites.
+	
+	rem Use CDONTS for sending Email
+	set objMail = Server.CreateObject("CDONTS.Newmail")
+	objMail.To = SendTo
+	objMail.From = SendFrom
+	objMail.Subject = SendSubject
+	objMail.Bcc = "pjaffe@nevo.com"
+	objMail.Body = MailBody
 
-	Select Case sServerIs
+	objMail.MailFormat = 0
 
-	Case "Microsoft-IIS/5.0"
+	objMail.Send
 
-		rem Use CDONTS for sending Email
-
-
-		set objMail = Server.CreateObject("CDONTS.Newmail")
-		objMail.To = SendTo
-		objMail.From = SendFrom
-		objMail.Subject = SendSubject
-		objMail.Bcc = "bobd@nevo.com"
-		objMail.Body = MailBody
-
-		objMail.MailFormat = 0
-
-		objMail.Send
-
-		set objMail = nothing
-
-	Case "Microsoft-IIS/5.1"
-
-		rem Use CDOSYS for sending Email
-		Dim iMsg
-		Set iMsg = CreateObject("CDO.Message")
-		Dim iConf
-		Set iConf = CreateObject("CDO.Configuration")
-
-		Dim Flds
-		Set Flds = iConf.Fields
-
-		With Flds
-		  rem assume constants are defined within script file
-		  .Item(cdoSendUsingMethod)       = 2
-		  .Item(cdoSMTPServer)            = "localhost"
-		  .Item(cdoSMTPConnectionTimeout) = 10
-		  .Item(cdoURLGetLatestVersion)   = True
-		  .Update
-		End With
-
-		With iMsg
-		  Set .Configuration = iConf
-		      .To       = SendTo
-		      .From     = SendFrom
-		      .Bcc		= "bobd@nevo.com"
-		      .Subject  = SendSubject
-		      .TextBody = MailBody
-		      .Send
-		End With
-
-		set iMsg = nothing
-		set iConf = nothing
-
-	End Select
+	set objMail = nothing
 
 
 Response.Redirect(sBackTo & "?emSent=OK")
