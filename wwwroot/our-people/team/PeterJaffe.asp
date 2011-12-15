@@ -8,8 +8,9 @@ involved in almost all aspects of Nevo's business.  For many years, Pete's prima
 focus at Nevo was on the technical side.  He grew to take on the role 
 of technology thought leader and chief architect, and then Chief Technology Officer.
 He oversaw the most challenging of Nevo's technology engagements, including our work with 
-Harvard, KeyBank, Manulife / John Hancock, Copyright Clearance Center, and the Acushnet Company. 
-He also managed several projects, including being responsible for requirements definition.  
+Harvard, KeyBank, Manulife / John Hancock, Copyright Clearance Center, the Acushnet Company, 
+and Conservation Services Group all of which spanned a broad range of technology stacks and architectures. 
+He also managed several projects, including being responsible for requirements discovery, clarification, and organization.  
 In August of 2007 he took on the role of Chief Operating Officer under which he is responsible
 for the strategic and operational leadership of Nevo's software development professionals.
 Pete’s contribution to Nevo projects is a strong factor in their successful outcomes.  
