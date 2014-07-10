@@ -28,7 +28,7 @@
 
 <li>We do exciting work. We use the latest echnologies to develop applications. Developers at Nevo are constantly challenged by new projects and new ideas. If you like learning new things then you will love it here. If you want to apply and reapply the same stuff you learned years ago, you won't be happy here at all.
 </li><p/>
-<li>Nevo is a very collegial. We hire people who are not merely at the top of the developer ladder, but also (and often even more importantly) are great to work with. It's important to our clients, and equally important to our own team.
+<li>Nevo is very collegial. We hire people who are not merely at the top of the developer ladder, but also (and often even more importantly) are great to work with. It's important to our clients, and equally important to our own team.
 </li><p/>
 <li>At Nevo, developers are the <u>most</u> important people. Being respected makes for a good working environment.
 </li><p/>
