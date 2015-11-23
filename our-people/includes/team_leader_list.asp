@@ -60,14 +60,6 @@ sTeamLeaderEmailImageURL(iTLC) 	= ""
 sTeamLeaderVisible(iTLC) 		= "Y"
 sTeamLeaderEmailImageURL(iTLC) 	= ""
 
-iTLC = iTLC + 1
-sTeamLeaderName(iTLC) 			= "Rick Giaimo"
-sTeamLeaderSlantPos(iTLC) 		= 3
-sTeamLeaderTitle(iTLC) 			= "Solution Architect"
-sTeamLeaderURL(iTLC) 			= "/our-people/team/RickGiaimo.asp"
-sTeamLeaderEmailImageURL(iTLC) 	= ""
-sTeamLeaderVisible(iTLC) 		= "Y"
-sTeamLeaderEmailImageURL(iTLC) 	= ""
 
 Function formatPageTitle (sTeamLeaderName)
 
