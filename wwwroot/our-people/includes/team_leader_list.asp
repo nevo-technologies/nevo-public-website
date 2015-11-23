@@ -60,6 +60,23 @@ sTeamLeaderEmailImageURL(iTLC) 	= ""
 sTeamLeaderVisible(iTLC) 		= "Y"
 sTeamLeaderEmailImageURL(iTLC) 	= ""
 
+iTLC = iTLC + 1
+sTeamLeaderName(iTLC) 			= "John Clarke"
+sTeamLeaderSlantPos(iTLC) 		= 3
+sTeamLeaderTitle(iTLC) 			= "Principal"
+sTeamLeaderURL(iTLC) 			= "/our-people/team/JohnClarke.asp"
+sTeamLeaderEmailImageURL(iTLC) 	= ""
+sTeamLeaderVisible(iTLC) 		= "Y"
+sTeamLeaderEmailImageURL(iTLC) 	= ""
+
+iTLC = iTLC + 1
+sTeamLeaderName(iTLC) 			= "Dan Goyette"
+sTeamLeaderSlantPos(iTLC) 		= 7
+sTeamLeaderTitle(iTLC) 			= "Principal"
+sTeamLeaderURL(iTLC) 			= "/our-people/team/DanGoyette.asp"
+sTeamLeaderEmailImageURL(iTLC) 	= ""
+sTeamLeaderVisible(iTLC) 		= "Y"
+sTeamLeaderEmailImageURL(iTLC) 	= ""
 
 Function formatPageTitle (sTeamLeaderName)
 
@@ -70,9 +87,9 @@ End Function
 Function formatTeamLeaderListItem (sID)
 
 	if ( sTeamLeaderVisible(sID) = "Y" ) Then
-	   formatTeamLeaderListItem= "<li class=""picklist""><a class=""listpick"" href=""javascript:newWindow('" & _
+	   formatTeamLeaderListItem= "<li class=""picklist""><a class=""listpick"" href=""$"" onclick=""window.open('" & _
 	 			     sTeamLeaderURL(sID) & _
-				     "?ID=" & sID & "');"">" & _
+				     "?ID=" & sID & "','teamleader','width=650,height=600').focus();return false;"">" & _
 				     sTeamLeaderName(sID) & _
 				     "</a>, " & _
 				     sTeamLeaderTitle(sID) & "</li>"
