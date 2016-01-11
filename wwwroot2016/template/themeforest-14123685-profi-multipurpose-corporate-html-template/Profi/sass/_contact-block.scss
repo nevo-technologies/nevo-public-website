@@ -1,0 +1,92 @@
+﻿
+/*------------------------------------------------------------------
+    Contacts section styles
+-------------------------------------------------------------------*/
+
+.contact-block {
+    margin-bottom: 0;
+    padding:80px 0 65px;
+    background-color:$defaultThemeColor;
+    header {
+        margin-bottom: 15px;
+        padding:10px 20px 20px;
+        text-align: left;
+        background-color: $whiteColor;
+        .section-title {
+            color:$defaultThemeColor;
+            margin-top:0;      
+        }
+        .section-description{
+            margin-bottom:0;
+        }
+    }
+    .input-group {
+        margin-bottom: 15px;
+        .input-group-addon {
+            .fa {
+                color: $whiteColor;
+            }
+            &.focus {
+                .fa {
+                    color: $whiteColor !important;
+                }
+            }
+        }
+        .form-control {
+            color: $whiteColor !important;
+            border-color: $whiteColor !important;
+            &::-webkit-input-placeholder {color: $whiteColor;}
+            &:-moz-placeholder {color: $whiteColor;}
+            &::-moz-placeholder {color: $whiteColor;}
+            &:-ms-input-placeholder {color: $whiteColor;}
+            &:focus {
+                border-color: $whiteColor !important;
+                color: $whiteColor !important;
+            }
+        }
+        .field-error {
+            font-size: 0.7em !important;
+        }
+    }
+    .btn {
+        position:absolute;
+        bottom: 15px;
+        right: 15px;
+        z-index:20;
+        min-width:70px;
+        padding:0 10px 0;
+        font-weight: 400;
+        line-height:30px;
+    }
+    .subscribe {
+        min-height: 0 !important;
+        text-align: center;
+        border:1px solid $whiteColor;
+        svg {
+            display:block;
+            width:50px;
+            margin:40px auto 41px;
+        }
+        .section-title,
+        .section-description{
+            color: $whiteColor;
+        }
+        .section-title {
+            margin-top: 15px;
+            font-size: 2em;
+        }
+        .input-group {
+            max-width: 295px;
+        }
+        form {
+            padding:0 20px;
+        }
+        .btn {
+            position: relative;
+            right:0;
+            bottom:0;
+            margin-bottom: 15px;
+        }
+    }
+
+}

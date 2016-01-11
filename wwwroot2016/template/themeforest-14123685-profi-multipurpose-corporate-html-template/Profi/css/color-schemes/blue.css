@@ -1,0 +1,325 @@
+﻿.pageload-overlay::after {
+    background:#4B8AB1;
+}
+
+.pageload-overlay::before {
+  background:rgba(75, 138, 177, 0.5);
+}
+
+/* btn-primary */
+.btn-primary {
+
+}
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:active:hover,
+.btn-primary:active:focus,
+.btn-primary:focus {
+  color: #4B8AB1;
+}
+.btn-primary.inverse-btn {
+  color: #4B8AB1;
+}
+
+/* btn-success */
+.btn-success {
+  color: #4B8AB1;
+  border-color: #4B8AB1;
+}
+.btn-success:hover,
+.btn-success:active,
+.btn-success:active:hover,
+.btn-success:active:focus,
+.btn-success:focus {
+  background-color: #4B8AB1;
+  border-color: #4B8AB1;
+}
+.btn-success.inverse-btn {
+  background-color: #4B8AB1;
+}
+.btn-success.inverse-btn:hover,
+.btn-success.inverse-btn:active,
+.btn-success.inverse-btn:active:hover,
+.btn-success.inverse-btn:active:focus,
+.btn-success.inverse-btn:focus {
+  color:#4B8AB1;
+  border-color: #4B8AB1;
+}
+
+
+
+
+a.next, a.prev {
+  color:#4B8AB1;
+}
+
+
+/* main-menu */
+.main-menu .navbar-nav > li.active > a {
+  color: #4B8AB1;
+}
+.main-menu .scroll-logo * {
+  fill: #4B8AB1;
+}
+.main-menu.version-3.main-menu .navbar-main-logo svg * {
+  fill: #4B8AB1;
+}
+
+.main-menu.version-3.main-menu .navbar-main-logo svg *,
+.main-menu.version-3.main-menu .navbar-brand svg * {
+  fill: #4B8AB1;
+}
+.navbar-fixed .navbar-nav > li > a:hover {
+  color: #4B8AB1;
+}
+.main-menu.version-3.main-menu .navbar-nav > li.reserve,
+.navbar-fixed .navbar-nav > li.reserve {
+  border-color: #4B8AB1;
+}
+.main-menu.version-3.main-menu .navbar-nav > li.reserve a,
+.navbar-fixed .navbar-nav > li.reserve > a {
+  color: #4B8AB1;
+}
+.main-menu.version-3.main-menu .navbar-nav > li.reserve:hover,
+.navbar-fixed .navbar-nav > li.reserve:hover {
+  border-color: #4B8AB1;
+  background: #4B8AB1;
+}
+.main-menu.mobile-menu.mobile-menu-open .navbar-nav > li > a:hover {
+  color: #4B8AB1;
+}
+.main-menu.mobile-menu.mobile-menu-open .navbar-nav > li.reserve {
+  background: #4B8AB1;
+  border-color: #4B8AB1;
+}
+.main-menu .navbar-nav > li.dropdown .dropdown-menu > .active > a,
+.main-menu .navbar-nav > li.dropdown .dropdown-menu > .active > a:hover,
+.main-menu .navbar-nav > li.dropdown .dropdown-menu > .active > a:focus {
+    color: #4B8AB1;
+}
+.main-menu.mobile-menu.mobile-menu-open .navbar-nav > li.reserve:hover {
+  border-color: #4B8AB1;
+}
+.main-menu.mobile-menu.mobile-menu-open .navbar-nav > li.reserve:hover a {
+  color: #4B8AB1;
+}
+
+
+/* main-section */
+.main-section.version-4 .arrow-block .next-view,
+.main-section.version-4 .arrow-block .prev-view {
+  background-color:#4B8AB1;
+   color: #4B8AB1;
+}
+
+
+/* info-block */
+.info-block.version-2 .info-block-img svg path,
+.info-block.version-2 .info-block-img svg line,
+.info-block.version-2 .info-block-img svg rect,
+.info-block.version-2 .info-block-img svg polygon {
+  fill: #4B8AB1;
+}
+.info-block.version-3 .info-block-img i {
+  color: #4B8AB1;
+}
+
+
+/* team */
+.team .slider-dots li {
+  background-color: #4B8AB1;
+}
+.team.version-2 .team-body .team-description .post,
+.team.version-1 .team-carousel .team-lazy .team-body .team-description p.office,
+.team.version-1 .team-carousel .team-lazy .team-body .team-description .social-links li .fa:hover {
+  color: #4B8AB1;
+}
+
+.team.version-2 .team-body .image-block::before {
+  background-color:rgba(75, 138, 177, 0.8);
+}
+
+
+
+/* news */
+.news-home.version-2 .news-body .news-list .news-item::before {
+  background-color:rgba(75, 138, 177, 0.9); 
+}
+.news-home .news-img-block .news-date,
+.img-block-head .news-date {
+  background-color: #4B8AB1;
+  opacity: .8;}
+
+/* counter-block */
+.counter-block.version-2 .counter-list li svg * {
+    fill: #4B8AB1;
+}
+.counter-block.version-2 .counter-list li div {
+    color: #4B8AB1;
+    border-color:#4B8AB1;
+}
+.counter-block.version-2 .counter-list li .fa {
+  color:#4B8AB1;
+}
+
+
+/* contact-block */
+.contact-block {
+  background-color: #4B8AB1 ;
+}
+.contact-block header .section-title {
+  color: #4B8AB1 ;
+}
+
+
+
+
+.blog-page article .news-description-block .news-info-block .right p .fa {
+  color: #4B8AB1;
+}
+
+
+
+
+
+/* customers */
+.customers .customers-lazy .description-block .fa {
+  background-color: #4B8AB1;
+}
+.customers.version-1 .customers-lazy .description-block .post {
+  color: #4B8AB1;
+}
+.customers.version-2 .customers-lazy .description-block .fa {
+  background-color: #4B8AB1;
+}
+
+
+/* products */
+.products-thumbs li:hover,
+.products-thumbs li.active {
+  border:1px solid #4B8AB1;
+}
+
+
+/* pricing-block */
+.pricing-block {}
+.pricing-block .pricing-list > li header h5,
+.pricing-block .pricing-list > li header h5 span,
+.pricing-block .pricing-list > li .pricing-inner-list li,
+.pricing-block.version-1 .pricing-list > li.popular header h5 {
+  color:#4B8AB1;
+}
+.pricing-block.version-1 .pricing-list > li.popular header h5 span,
+.pricing-block .pricing-list > li.popular header h5 {
+  background-color: #4B8AB1;
+}
+
+
+
+/* blog-page */
+.blog-page article .img-block-head .news-date  {
+  background-color: #4B8AB1;
+  opacity: .8;
+}
+.blog-page article p a {
+  color:#4B8AB1;
+}
+.blog-page .categories li a .fa {
+    color: #4B8AB1;
+}
+.blog-page .popular-tags li a {
+  background-color: #4B8AB1;
+  border-color: #4B8AB1;
+}
+.blog-page .popular-tags li a:hover {
+  color: #4B8AB1;
+  border-color: #4B8AB1;
+}
+.blog-page .pagination-block .pagination > li.active a,
+.blog-page .pagination-block .pagination > li span:hover,
+.blog-page .pagination-block .pagination > li a:hover,
+.blog-page .pagination-block .pagination > li a:focus,
+.blog-page article .news-description-block .share .share-links li span {
+  color: #4B8AB1;
+}
+
+
+
+.slider-dots li {
+  background-color: #4B8AB1;
+}
+
+
+#reservation .modal-header button.close,
+.blueimp-gallery > .close {
+  border: 1px solid #4B8AB1;
+  color: #4B8AB1;
+}
+#reservation .modal-header button.close i:after,
+#reservation .modal-header button.close i:before,
+.blueimp-gallery > .close i:after,
+.blueimp-gallery > .close i:before {
+  background-color:#4B8AB1;
+}
+
+#reservation .modal-header button.close:hover,
+.blueimp-gallery > .close:hover {
+  background-color: #4B8AB1;
+  color:#fff;
+}
+#reservation .modal-header button.close i:after,
+#reservation .modal-header button.close i:before,
+{
+  background-color: #4B8AB1;
+}
+
+
+
+.input-group .form-control:focus{
+  border-color: #4B8AB1 !important;
+  color: #4B8AB1 !important;
+}
+.input-group .input-group-addon.focus .fa{
+  color: #4B8AB1 !important;
+}
+
+
+
+
+
+.other-pages .main-menu.navbar-fixed .navbar-nav li.reserve {
+  border-color: #4B8AB1;
+}
+.other-pages .main-menu.navbar-fixed .navbar-nav li.reserve:hover {
+  background: #4B8AB1;
+  border-color: #4B8AB1;
+}
+.other-pages .main-menu.navbar-fixed .navbar-nav li.reserve > a {
+  color: #4B8AB1;
+}
+
+
+/* footer */
+footer .line-lg span {
+  border-color:#4B8AB1;
+}
+footer .footer-social li a span {
+  color: #4B8AB1;
+}
+footer .map-block .open-map svg .pin-color {
+  fill: #4B8AB1; 
+}
+
+
+
+
+@media only screen and (max-width: 767px) {
+    .news-home.version-2 .news-body .news-list .news-item .btn {
+        color: #4B8AB1;
+        border-color: #4B8AB1;
+    }
+}
+
+
+
+
