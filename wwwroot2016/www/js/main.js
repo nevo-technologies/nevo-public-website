@@ -505,3 +505,8 @@ function validation (formId) {
     
     return hasError;
 }
+
+var app = angular.module("app", []);
+app.controller("controller", ['$scope', '$filter', function($scope, $filter) {
+    $scope.nowYear = $filter('date')(new Date(),'yyyy');
+}]);

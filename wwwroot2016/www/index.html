@@ -24,7 +24,7 @@
             <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
     </head>
-    <body id="home" class="index">
+    <body id="home" class="index" ng-controller="controller" ng-app="app">
         <!-- preloader -->
         <div id="page-preloader" class="pageload-overlay pageload-loading"></div>
         <!-- preloader end -->
@@ -47,9 +47,8 @@
                     <ul class="nav navbar-nav">
                         <li><a href="#main-section">Home</a></li>
                         <li><a href="#about-us">About</a></li>
-                        <li><a href="#our-people">Our people</a></li>
-                        <li><a href="#team">Leaders</a></li>
-                        <li><a href="#info-block">Services</a></li>
+                        <li><a href="#team">Our people</a></li>
+                        <li><a href="#info-block">Our knowledge</a></li>
                         <!-- <li><a href="#products">Products</a></li> -->
                         <!-- <li><a href="#pricing-block">Pricing</a></li>
                         <li><a href="#counter-block">Counter</a></li>
@@ -130,43 +129,11 @@
         </section>
         <!-- about-us end -->
 
-        <!-- our-people -->
-        <section id="our-people" class="products version-1">
-            <h2 class="section-title">Our people</h2>
-            <p class="section-description">Information about our professional team of software engineers</p>
-            <div class="products-body">
-                <div class="container">
-                    <div class="row">
-                        <div class="products-list">
-                            <article>
-                                <div class="col-xs-12 col-sm-6 prod-image">
-                                    <img src="./images/owr-people.jpg" alt="" />
-                                </div>
-                                <div class="col-xs-12 col-sm-6 prod-description">
-                                    <h5>Nevo Technologies</h5>
-                                    <p class="line-lg"><span></span></p>
-                                    <p>
-                                        Nevo's technologists are experts in every phase of the design and implementation process.
-                                        We have the capacity to participate from conception to completion, working in concert with your staff or completely taking over product development.
-                                        Unifying our breadth of skills is a single-minded ability to find creative answers to technological challenges — the more complex the better.
-                                        And unlike the code-and-go approach of some companies, our team collaborates with yours to identify critical factors, implement new solutions, and deploy them rapidly.
-                                        In fact, we believe this intense engagement is what ensures our mutual success.
-                                    </p>
-                                    <!-- <a class="btn btn-success btn-sm" href="./product_page.html">Read more</a> -->
-                                </div>
-                            </article>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- our-people end -->
-
         <!-- Team  -->
         <section id="team" class="team version-1">
             <div class="bg-effect image" style="background-image: url('./images/boston4.jpg');">
             </div>
-            <h2 class="section-title">Leaders</h2>
+            <h2 class="section-title">Our people</h2>
             <p class="section-description">
                 Team Leaders and Principals at Nevo
             </p>
@@ -265,6 +232,15 @@
                         </article>
                     </div>
                 </div>
+                <div class="row">
+                    <p class="section-description summary">
+                        Nevo's technologists are experts in every phase of the design and implementation process.
+                        We have the capacity to participate from conception to completion, working in concert with your staff or completely taking over product development.
+                        Unifying our breadth of skills is a single-minded ability to find creative answers to technological challenges — the more complex the better.
+                        And unlike the code-and-go approach of some companies, our team collaborates with yours to identify critical factors, implement new solutions, and deploy them rapidly.
+                        In fact, we believe this intense engagement is what ensures our mutual success.
+                    </p>
+                </div>
             </div>
         </section>
         <!-- Team end -->
@@ -314,7 +290,9 @@
                     </div>
                 </div>
                 <div class="row">
-                    <p class="section-description" style="margin-top:40px;margin-bottom:10px">Most importantly, you have complete ownership of all work products, and Nevo retains no rights to the intellectual property of our engagements.</p>
+                    <p class="section-description summary">
+                        Most importantly, you have complete ownership of all work products, and Nevo retains no rights to the intellectual property of our engagements.
+                    </p>
                 </div>
             </div>
         </section>
@@ -485,7 +463,7 @@
         <!-- Counter end -->
 
         <!-- customers -->
-        <section id="customers" class="customers version-1">
+        <!-- <section id="customers" class="customers version-1">
             <div class="bg-effect image" style="background-image: url('./images/boston4.jpg');">
             </div>
             <div class="container">
@@ -520,71 +498,119 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
         <!-- customers end -->
 
         <!-- news -->
-        <!-- <section id="news" class="news-home version-1">
-            <h2 class="section-title">Our News</h2>
-            <p class="section-description">Don't miss something special!</p>
+        <section id="news" class="news-home version-1">
+            <h2 class="section-title">White papers</h2>
+            <p class="section-description">You may be interested in our industry expertise</p>
             <div class="news-body">
                 <div class="container">
                     <div class="row">
                         <div class="news-list">
                             <div class="news-item">
                                 <div class="col-xs-12 col-sm-6 news-img-block">
-                                    <div class="news-date">
-                                        <p>09</p>
-                                        <span>June</span>
-                                    </div>
-                                    <img src="./images/news.jpg" alt="" />
+                                    <img src="./images/high-performance.jpg" alt="" />
                                 </div>
                                 <div class="col-xs-12 col-sm-6 news-text-block">
-                                    <h5>Knowing Your Rights As</h5>
-                                    <p class="news-date"><span class="fa fa-calendar"></span>09 June 2015</p>
+                                    <h5>10X Development: High Performance Software Teams</h5>
                                     <p class="line-lg"><span></span></p>
-                                    <p class="news-text-block-text">We delve into common stock owners' privileges and how to be vigilant in monitoring a company. Learn how to break down and understand a corporate budget.
+                                    <p class="news-text-block-text">
+                                        <p>A High Performance Software Team is remarkably similar to a winning sports team. It needs talent,
+                                    leadership, structure, and spirit. Just like a winning sports team, it doesn’t need to be filled with
+                                    superstars, but it can’t have any laggards either. The 1983 Celtics had Larry Bird and Robert Parish, but
+                                    it took more than two stars to win. (Van Riper, 2008) Talent is a necessary, but not sufficient condition
+                                    for success. Like sports teams, High Performance Software Teams also need leadership, strategy,
+                                    discipline, and coordination. They need to know how to work together as a cohesive unit. Consequently, it
+                                    often takes time for an HPT to mature, to find the winning groove.
+                                        <a target="_blank" href="./whitepapers/high-performance-software-teams.pdf">
+                                            Read more...
+                                        </a></p>
                                     </p>
-                                    <a class="btn btn-success btn-sm" href="./blog_post.html">Read more</a>
                                 </div>
                             </div>
                             <div class="news-item">
                                 <div class="col-xs-12 col-sm-6 news-img-block">
-                                    <div class="news-date">
-                                        <p>10</p>
-                                        <span>June</span>
-                                    </div>
-                                    <img src="./images/news.jpg" alt="" />
+                                    <img src="./images/requirements-gathering.jpg" alt="" />
                                 </div>
                                 <div class="col-xs-12 col-sm-6 news-text-block">
-                                    <h5>The Benefits Of Corporate</h5>
-                                    <p class="news-date"><span class="fa fa-calendar"></span>10 June 2015</p>
+                                    <h5>The Requirements Gathering Process</h5>
                                     <p class="line-lg"><span></span></p>
-                                    <p class="news-text-block-text">Many U.S. companies have found it advantageous to relocate their headquarters rather than face the highest corporate tax rates in the world regardless of whether income was earned domestically ...</p>
-                                    <a class="btn btn-success btn-sm" href="./blog_post.html">Read more</a>
+                                    <p class="news-text-block-text">
+                                    <p>An effective requirements gathering process is perhaps the most critical driver of software
+                                    project success. Getting the requirements right – and getting the right requirements – can
+                                    mean the difference between a successful project – one that satisfies the needs of its users
+                                    and is delivered on-time and on-budget – and one that fails.
+                                        <a target="_blank" href="./whitepapers/requirements-gathering-process.pdf">
+                                            Read more...
+                                        </a></p>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="news-item">
+                                <div class="col-xs-12 col-sm-6 news-img-block">
+                                    <img src="./images/build-buy.jpg" alt="" />
+                                </div>
+                                <div class="col-xs-12 col-sm-6 news-text-block">
+                                    <h5>Making a Build vs. Buy Decision</h5>
+                                    <p class="line-lg"><span></span></p>
+                                    <p class="news-text-block-text">
+                                    <p>Few Information Technology topics have received the sustained interest visited
+                                    upon the question of whether organizations should acquire commercial off-the-shelf (COTS)
+                                    software packages or build from scratch. No general answer exists to this complex question,
+                                    but a solid understanding of the differences between the two, and a structured approach,
+                                    can remove both the uncertainty and the risk from this critical decision.
+                                    <a target="_blank" href="./whitepapers/build-vs-buy.pdf">
+                                            Read more...
+                                        </a></p>
+                                    </p>
                                 </div>
                             </div>
                             <div class="news-item">
                                 <div class="col-xs-12 col-sm-6 news-img-block">
-                                    <div class="news-date">
-                                        <p>11</p>
-                                        <span>June</span>
-                                    </div>
-                                    <img src="./images/news.jpg" alt="" />
+                                    <img src="./images/vendor-selection.jpg" alt="" />
                                 </div>
                                 <div class="col-xs-12 col-sm-6 news-text-block">
-                                    <h5>4 Ways Millennials Can Buy </h5>
-                                    <p class="news-date"><span class="fa fa-calendar"></span>11 June 2015</p>
+                                    <h5>Vendor Selection</h5>
                                     <p class="line-lg"><span></span></p>
-                                    <p class="news-text-block-text">Buying private businesses is a good way to have greater control over your investments while increasing your income and avoiding the fluctuations of the market.</p>
-                                    <a class="btn btn-success btn-sm" href="./blog_post.html">Read more</a>
+                                    <p class="news-text-block-text">
+                                    <p>Few Information Technology topics have received the sustained interest visited
+                                        upon the question of how origanizations should embark on process of selecting software
+                                        packages. No simple answer exists to this complex question, but a solid understanding of
+                                        the critical factros that influence the long-term success of a software implementation,
+                                        combined with a structured approach...
+                                        <a target="_blank" href="./whitepapers/nevo-vendor-selection.pdf">
+                                            Read more...
+                                        </a></p>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="news-item">
+                                <div class="col-xs-12 col-sm-6 news-img-block">
+                                    <img src="./images/sports-team.jpg" alt="" />
+                                </div>
+                                <div class="col-xs-12 col-sm-6 news-text-block">
+                                    <h5>Building a High Performance Team</h5>
+                                    <p class="line-lg"><span></span></p>
+                                    <p class="news-text-block-text">
+                                    <p>Like winning sports teams, great software development teams combine top talent, leadership,
+                                    culture, and process (the development equivalent of a strategy and game plan). They require
+                                    close cooperation and teamwork. They are the result of a process of continual improvement and
+                                    refinement, and, like champion teams, embody the ability to respond dynamically to changing
+                                    circumstances.
+                                        <a target="_blank" href="./whitepapers/building-a-high-performance-team.pdf">
+                                            Read more...
+                                        </a></p>
+                                    </p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section> -->
+        </section>
         <!-- news end -->
 
         <!-- jobs -->
@@ -705,7 +731,7 @@
                         </ul> -->
 
                         <div class="footer-copyright">
-                            <p>&copy; 2015 Nevo Technologies, Inc.</p>
+                            <p>&copy; {{nowYear}} Nevo Technologies, Inc.</p>
                             <p>All rights reserved</p>
                         </div>
                     </div>
@@ -787,6 +813,7 @@
         <div class="covers"></div>
 
         <script type="text/javascript" src="./js/jquery.min.js"></script>
+        <script type="text/javascript" src="./js/angular.min.js"></script>
         <script type="text/javascript" src="./js/waypoints.min.js"></script>
         <script type="text/javascript" src="./js/ScrollToPlugin.min.js"></script>
         <script type="text/javascript" src="./js/TweenMax.min.js"></script>

@@ -6,3 +6,8 @@
 .line-lg span {
     width: 100% !important;
 }
+
+.summary {
+    margin-top:40px !important;
+    margin-bottom:10px !important;
+}
