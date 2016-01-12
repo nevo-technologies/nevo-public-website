@@ -128,13 +128,13 @@ $(document).ready(function () {
         map = new google.maps.Map(document.getElementById('map'), {
             zoom: 16,
             scrollwheel: false,
-            center: {lat: 42.3746259, lng: -71.1222037}
+            center: {lat: 42.374366, lng: -71.119987}
         });
 
         // marker
         var marker = new google.maps.Marker({
         map: map,
-        position: {lat: 42.3746259, lng: -71.1222037},
+        position: {lat: 42.374366, lng: -71.119987},
         title: "Nevo's Headquarters"
       });
 
