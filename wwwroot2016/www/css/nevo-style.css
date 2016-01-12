@@ -2,3 +2,7 @@
     min-width: 250px !important;
     height: 380px;
 }
+
+.line-lg span {
+    width: 100% !important;
+}
