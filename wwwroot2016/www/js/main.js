@@ -19,6 +19,7 @@ $(document).ready(function () {
 
     $('.readmore').readmore({
             speed: 500,
+            moreLink: '<a href="#">Read more</a>',
             lessLink: '<a href="#">Read less</a>',
             collapsedHeight: 0
         });
