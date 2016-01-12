@@ -2777,7 +2777,8 @@ form#formReservation-2 {
     .contact-block .subscribe img {
       display: block;
       width: auto;
-      height: 295px }
+      height: 295px;
+      width: 100%; }
     .contact-block .subscribe .section-title,
     .contact-block .subscribe .section-description {
       color: #fff; }
