@@ -15,6 +15,7 @@
         <link href="./css/bootstrap.css" rel="stylesheet" type="text/css" />
         <link href="./css/animate.min.css" rel="stylesheet" type="text/css" />
         <link href="./css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+        <link href="./css/jquery-ui.min.css" rel="stylesheet" type="text/css" />
         <link href="./css/style.css" rel="stylesheet" type="text/css" />
         <link href="./css/nevo-style.css" rel="stylesheet" type="text/css" />
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -29,14 +30,16 @@
         <div id="page-preloader" class="pageload-overlay pageload-loading"></div>
         <!-- preloader end -->
 
+        <div class="ui-widget-overlay" style="display: none"></div>
+
         <header class="home-page">
             <!-- main menu -->
             <nav class="navbar main-menu">
                 <div class="main-menu-inner">
-                    <a class="navbar-main-logo" href="./index.html">
+                    <a class="navbar-main-logo" href="#main-section">
                         <img src="./images/nevo1.png"
                              class="fix-logo" viewBox="0 0 196.3 84.2" style="enable-background:new 0 0 196.3 84.2;">
-                        <img src="./images/nevo.jpg"
+                        <img src="./images/nevo.png"
                              class="scroll-logo" viewBox="0 0 196.3 84.2" style="enable-background:new 0 0 196.3 84.2;">
                    </a>
                     <span class="mobile-menu-btn">
@@ -48,7 +51,8 @@
                         <li><a href="#main-section">Home</a></li>
                         <li><a href="#about-us">About</a></li>
                         <li><a href="#team">Our people</a></li>
-                        <li><a href="#info-block">Our knowledge</a></li>
+                        <li><a href="#our-knowledge">Our knowledge</a></li>
+                        <li><a href="#case-studies">Case studies</a></li>
                         <!-- <li><a href="#products">Products</a></li> -->
                         <!-- <li><a href="#pricing-block">Pricing</a></li>
                         <li><a href="#counter-block">Counter</a></li>
@@ -110,6 +114,8 @@
                                         High Performance Teams are rare. Like winning sports teams, they combine extraordinary contributors, talented leadership, and refined processes to produce extraordinary results.  The benefits for our clients are simple: lower total cost, reduced time to completion, and predictable results.
                                     </p>
                                     <div class="readmore">
+                                        <h5>Our story</h5>
+                                        <p class="line-lg"><span></span></p>
                                         <p>
                                             Application software development has always been challenging, just look at the statistics on projects running over budget, missing deadlines, or failing to deliver.  To make matters worse, the last twenty years have added a new level of complexity with object oriented technologies, networks, mobile devices, web browsers, and users expecting ever faster development cycles.
                                         </p><p>
@@ -135,7 +141,8 @@
             </div>
             <h2 class="section-title">Our people</h2>
             <p class="section-description">
-                Team Leaders and Principals at Nevo
+                <span ng-if="!isSmallDevice()">Team Leaders and Principals at Nevo</span>
+                <span ng-if="isSmallDevice()">Leaders and Principals</span>
             </p>
             <div class="container">
                 <div class="row">
@@ -149,12 +156,9 @@
                                     <h5 class="title">Kenneth S. Ledeen</h5>
                                     <p class="office">Chairman and CEO</p>
                                     <p class="about">Let's build the coolest brands and products</p>
-                                    <ul class="social-links">
-                                        <li><a class="fa fa-linkedin-square" href></a></li>
-                                        <li><a class="fa fa-facebook-square" href></a></li>
-                                        <li><a class="fa fa-twitter-square" href></a></li>
-                                        <li><a class="fa fa-google-plus-square" href></a></li>
-                                    </ul>
+                                    <p style="text-align: center; margin-top: 2px">
+                                        <a id="ken" href class="btn btn-success btn-sm open-modal">Read more</a>
+                                    </p>
                                 </div>
                             </div>
                         </article>
@@ -167,12 +171,9 @@
                                     <h5 class="title">Peter C. L. Jaffe</h5>
                                     <p class="office">Chief Operating Officer</p>
                                     <p class="about">Let's identify and solve the root cause of the problem</p>
-                                    <ul class="social-links">
-                                        <li><a class="fa fa-youtube-square" href="#"></a></li>
-                                        <li><a class="fa fa-facebook-square" href="#"></a></li>
-                                        <li><a class="fa fa-twitter-square" href="#"></a></li>
-                                        <li><a class="fa fa-google-plus-square" href="#"></a></li>
-                                    </ul>
+                                    <p style="text-align: center; margin-top: 2px">
+                                        <a id="peter" href class="btn btn-success btn-sm open-modal">Read more</a>
+                                    </p>
                                 </div>
                             </div>
                         </article>
@@ -233,20 +234,23 @@
                     </div>
                 </div>
                 <div class="row">
-                    <p class="section-description summary">
-                        Nevo's technologists are experts in every phase of the design and implementation process.
-                        We have the capacity to participate from conception to completion, working in concert with your staff or completely taking over product development.
-                        Unifying our breadth of skills is a single-minded ability to find creative answers to technological challenges — the more complex the better.
-                        And unlike the code-and-go approach of some companies, our team collaborates with yours to identify critical factors, implement new solutions, and deploy them rapidly.
-                        In fact, we believe this intense engagement is what ensures our mutual success.
+                    <p class="section section-description text-left" style="color: white">
+                        <h5 style="color: white">Our Technologists</h5>
+                        <div style="color: white; text-align: left">
+                            Nevo's technologists are experts in every phase of the design and implementation process.
+                            We have the capacity to participate from conception to completion, working in concert with your staff or completely taking over product development.
+                            Unifying our breadth of skills is a single-minded ability to find creative answers to technological challenges — the more complex the better.
+                            And unlike the code-and-go approach of some companies, our team collaborates with yours to identify critical factors, implement new solutions, and deploy them rapidly.
+                            In fact, we believe this intense engagement is what ensures our mutual success.
+                        </div>
                     </p>
                 </div>
             </div>
         </section>
         <!-- Team end -->
 
-        <!-- info block -->
-        <section id="info-block" class="info-block version-1">
+        <!-- services -->
+        <section id="services" class="info-block version-1" ng-if="false">
             <h2 class="section-title">SERVICES</h2>
             <p class="section-description">We can help you build software in a way that meets your need.</p>
             <div class="container">
@@ -296,7 +300,7 @@
                 </div>
             </div>
         </section>
-        <!-- info block end -->
+        <!-- services end -->
 
         <!-- pricing -->
         <!-- <section id="pricing-block" class="pricing-block version-1">
@@ -462,49 +466,10 @@
         </section> -->
         <!-- Counter end -->
 
-        <!-- customers -->
-        <!-- <section id="customers" class="customers version-1">
-            <div class="bg-effect image" style="background-image: url('./images/boston4.jpg');">
-            </div>
-            <div class="container">
-                <h2 class="section-title">Our Clients say</h2>
-                <p class="section-description">About our work</p>
-                <div class="customers-carousel">
-                    <div class="caurousel-item">
-                        <div class="customers-lazy">
-                            <div class="image-block">
-                               <img src="./images/team.jpg" alt="" />
-                            </div>
-                            <div class="description-block">
-                                <span class="fa fa-quote-left"></span>
-                                <h5>Mary  Forly</h5>
-                                <span class="post">Assistant Treasurer</span>
-                                <p>All staff was very helpful and we got exactly what we needed, in the timeframe we needed it. I would highly recommend your company to anyone. Profi team is an excellent resource to tackle strategic brand issues. I loved to work with this company.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="caurousel-item">
-                        <div class="customers-lazy">
-                            <div class="image-block">
-                                <img src="./images/team.jpg" alt="" />
-                            </div>
-                            <div class="description-block">
-                                <span class="fa fa-quote-left"></span>
-                                <h5>Sally Hartford</h5>
-                                <span class="post">Project manager</span>
-                                <p>We worked together very productively, especially that part of the project, which concerned creativity and generation of ideas. I loved to work with this company. Profi team is an excellent resource to tackle strategic brand issues.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> -->
-        <!-- customers end -->
-
-        <!-- news -->
-        <section id="news" class="news-home version-1">
-            <h2 class="section-title">White papers</h2>
-            <p class="section-description">You may be interested in our industry expertise</p>
+        <!-- knowledge -->
+        <section id="our-knowledge" class="news-home version-1">
+            <h2 class="section-title">Our knowledge</h2>
+            <p class="section-description">You may be interested in our white papers</p>
             <div class="news-body">
                 <div class="container">
                     <div class="row">
@@ -611,7 +576,68 @@
                 </div>
             </div>
         </section>
-        <!-- news end -->
+        <!-- knowledge end -->
+
+        <!-- case studies -->
+        <section id="case-studies" class="customers version-1">
+            <div class="bg-effect image" style="background-image: url('./images/boston4.jpg');">
+            </div>
+            <div class="container">
+                <h2 class="section-title">Case Studies</h2>
+                <p class="section-description" ng-if="!isSmallDevice()">
+                    The case studies below describe some of the ways in which we've helped our clients achieve their goals
+                </p>
+                <div class="customers-carousel">
+                    <div class="caurousel-item">
+                        <div class="customers-lazy">
+                            <div class="image-block" style="vertical-align: middle; text-align: center">
+                                <img src="./images/john-hancock-logo.png" alt="" />
+                            </div>
+                            <div class="description-block">
+                                <h5>Financial Information Portal</h5>
+                                <span class="post">
+                                    <a href="http://www.johnhancock.com/products/mutual-funds.html" target="_blank">
+                                        John Hancock Mutual Funds
+                                    </a>,
+                                    <br>Financial Services
+                                    <span class="line-lg"></span>
+                                </span>
+                                <p>
+                                    John Hancock Mutual Funds (JH Funds), a subsidiary of Manulife, manages more than $50 billion in variety of open- and closed-end mutual funds and various other investment instruments.
+                                </p>
+                                <p style="text-align: center; margin-top: 10px">
+                                    <a id="johnhancock" href class="btn btn-success btn-sm open-modal">Read more</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="caurousel-item">
+                        <div class="customers-lazy">
+                            <div class="image-block" style="vertical-align: middle; text-align: center">
+                                <img src="./images/acushnetcompany.jpg" alt="" />
+                            </div>
+                            <div class="description-block">
+                                <h5>Order Entry System</h5>
+                                <span class="post">
+                                    <a href="https://www.acushnetcompany.com/" target="_blank">
+                                        Acushnet Company
+                                    </a>,
+                                    <br>Sports Equipment Manufacturing
+                                    <span class="line-lg"></span>
+                                </span>
+                                <p>
+                                    John Hancock Mutual Funds (JH Funds), a subsidiary of Manulife, manages more than $50 billion in variety of open- and closed-end mutual funds and various other investment instruments.
+                                </p>
+                                <p style="text-align: center; margin-top: 10px">
+                                    <a id="johnhancock" href class="btn btn-success btn-sm open-modal">Read more</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- case studies end -->
 
         <!-- jobs -->
         <section id="jobs" class="products version-1">
@@ -699,7 +725,7 @@
                             </div>
                         </form>
                     </div>
-                    <div class="col-sm-4 col-md-3 nopadding-left">
+                    <div class="col-sm-4 col-md-3 nopadding-left" ng-hide="isMediumDevice()">
                         <div class="subscribe">
                             <img src="./images/contact-us.jpg" alt="">
                         </div>
@@ -731,8 +757,8 @@
                         </ul> -->
 
                         <div class="footer-copyright">
-                            <p>&copy; {{nowYear}} Nevo Technologies, Inc.</p>
-                            <p>All rights reserved</p>
+                            <p>&copy;&nbsp;{{nowYear}}&nbsp;Nevo&nbsp;Technologies,&nbsp;Inc.</p>
+                            <p>All&nbsp;rights&nbsp;reserved</p>
                         </div>
                     </div>
                     <!-- <div class="col-md-3 col-sm-6 footer-services-col">
@@ -810,10 +836,123 @@
             </div>
         </div>
         <!-- Modal End -->
+
+        <!-- Modals -->
+        <div id="ken-modal" class="modal" ng-style="{'max-height' : windowHeight}">
+            <div class="modal-content close-modal">
+                <div class="modal-body">
+                    <div class="close-x">X</div>
+                    <div class="image-block">
+                        <img src="./images/ken-ledeen.jpg" alt="Kenn Ledeen" height="200px"/>
+                    </div>
+                    <div class="team-description">
+                        <h5 class="title">Kenneth S. Ledeen</h5>
+                        <div style="overflow-y:auto;">
+                            <p>
+                                Kenneth S. Ledeen is Chairman and Chief Executive Officer of Nevo Technologies. His strategic vision is to develop and deploy systems that meet mission-critical application needs while employing the most advanced distributed object and internet technologies.
+                            </p>
+                            <p>Prior to founding Nevo in 1997, Mr. Ledeen was a principal of Covington Associates, providing investment banking, financial advisory, and strategic planning services primarily to high tech and healthcare companies. He has also held senior management positions in several leading computer engineering and software development companies.
+                                A frequent speaker at major industry conferences, Mr. Ledeen serves on the boards of seven technology companies. He holds a BA from Harvard College.
+                            </p>
+                        </div>
+                        <div style="text-align: center">
+                            <a href class="btn btn-success btn-sm close_modal">Close</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="peter-modal" class="modal" ng-style="{'max-height' : windowHeight}">
+            <div class="modal-content close-modal">
+                <div class="modal-body">
+                    <div class="close-x">X</div>
+                    <div class="image-block">
+                        <img src="./images/peter-jaffe.jpg" alt="Peter Jaffe" height="200px"/>
+                    </div>
+                    <div class="team-description">
+                        <h5 class="title">Kenneth S. Ledeen</h5>
+                        <div style="overflow-y:auto;">
+                            <p>
+                                Peter Jaffe is Nevo's Chief Operating Officer. After joining Nevo in 1999 as a software developer on Nevo's founding contract, he has been involved in almost all aspects of Nevo's business. For many years, Pete's primary focus at Nevo was on the technical side. He grew to take on the role of technology thought leader and chief architect, and then Chief Technology Officer. He oversaw the most challenging of Nevo's technology engagements, including our work with Harvard, KeyBank, Manulife / John Hancock, Copyright Clearance Center, the Acushnet Company, and Conservation Services Group all of which spanned a broad range of technology stacks and architectures. He also managed several projects, including being responsible for requirements discovery, clarification, and organization. In August of 2007 he took on the role of Chief Operating Officer under which he is responsible for the strategic and operational leadership of Nevo's software development professionals. Pete’s contribution to Nevo projects is a strong factor in their successful outcomes. He is a gifted mentor and a great team player.
+                            <p>
+                                Pete holds bachelor's and master's degrees in Electrical Engineering and Computer Science from MIT, where he focused in control systems and robotics.	                            </p>
+                            </p>
+                        </div>
+                        <div style="text-align: center">
+                            <a href class="btn btn-success btn-sm close_modal">Close</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="johnhancock-modal" class="modal" ng-style="{'max-height' : windowHeight}">
+            <div class="modal-content close-modal">
+                <div class="modal-body">
+                    <div class="close-x">X</div>
+                    <div class="image-block" style="vertical-align: middle; text-align: center">
+                        <img src="./images/john-hancock-logo.png" alt="" />
+                    </div>
+                    <div class="description-block">
+                        <h5>Financial Information Portal</h5>
+                        <span class="post">
+                            <a href="http://www.johnhancock.com/products/mutual-funds.html" target="_blank">
+                                John Hancock Mutual Funds
+                            </a>,
+                            <br>Financial Services
+                            <span class="line-lg"></span>
+                        </span>
+                        <p>
+                            John Hancock Mutual Funds (JH Funds), a subsidiary of Manulife, manages more than $50 billion in variety of open- and closed-end mutual funds and various other investment instruments. In 2004, Manulife acquired John Hancock, and, during its analysis of the various acquired business units, decided that it wanted to elevate JH Funds, then ranked in the high teens among U.S. mutual fund providers in terms of assets under management, to a top-ten provider. Seizing leadership in the online marketing of mutual funds was a prominent part of its plan.
+                        </p><p>
+                            JH Funds had been an early pioneer in online mutual fund marketing, going live with jhfunds.com in 1999. That website ran on ATG Dynamo, using an Oracle database and Interwoven Teamsite as a content management system. Dynamo had mostly failed to gain acceptance as a web development platform, and the site's look and feel were showing their age.
+                        </p><p>
+                            <h5>Requirements</h5>
+
+                            JH Funds decided to undertake a complete rewrite of the site, with the following goals:
+                            <ul>
+                                <li>Simpler, more intuitive site navigation</li>
+                                <li>A new, fresher look and feel</li>
+                                <li>A full-site search function</li>
+                                <li>Cleaner integrations with third-party content</li>
+                                <li>Migration to a Manulife-standard web platform</li>
+                                <li>Improved content management to give business users more control and allow for more up-to-date content</li>
+                                <li>Most importantly, the new site had to be up and running within 8 months, by June of the following year, so that it could help JH Funds' sales staff achieve their goals for that fiscal year. Quality could not be compromised, but cost was flexible.</li>
+                            </ul>
+                        </p><p>
+                            <h5>Nevo's Solution</h5>
+
+                            JH Funds had already selected a design agency for the project, Toronto-based Teehan+Lax (T+L). Nevo immediately set about working with its staff and with JH Funds marketing to conduct full requirements gathering, teasing out the details that T+L's designs necessarily glossed over. In parallel, Nevo began building an implementation team and performing design work, selecting technology platforms, laying out core components like site authentication, and refining the content management system integration strategy.
+
+                            Based on its experience with ASP.NET 2.0's beta version, Nevo recommended using the newly-released development platform, while it suggested moving to SQL Server 2000, as SQL Server 2005, while in full release, was not yet a Manulife standard. While JH Funds was hesitant to continue using Teamsite as a CMS, together with Nevo it decided to hold that component constant amid all the other change.
+
+                            Nevo's site component strategy was to use standard ASP.NET components wherever possible, digging deep into the code to provide customization hooks where necessary. Site authentication was a particularly thorny issue, as JH Funds wanted to unify authentication and site navigation across three logical sites, one each for the public, JH Funds partners, and JH Funds staff.
+
+                            The original jhfunds.com stored many of its pages wholesale in a content management system, depending on content authors to format it properly. The new system wherever possible stored snippets of text in a database and formatted the text in code, removing formatting responsibility from business users that lacked web page authoring expertise.
+
+                            With an fairly open budget and a tight time constraint, Nevo avoided the common consulting pitfall of overstaffing. Nevo staffed a team of 1 lead, 2 senior developers, and 2 junior developers, depending on JH Funds staff for database design and testing. We believed that this staffing level was optimal, even ignoring cost; the coordination overhead of additional developer would have actually slowed the work. To meet JH Funds' tight time constraints, Nevo recommended and won approval for deferring some pieces of functionality to a second phase, including the integration of a site search engine.
+                            </p><p>
+                            <h5>Results</h5>
+
+                            The redesigned site went live on schedule in June with the deferred functionality following just a few months later, in October. T+L's clean designs impressed everyone involved in the project, and, with Nevo's concerted effort to produce a site faithful to their vision, jhfunds.com went on to win numerous awards, including an Outstanding Website award from the Web Marketing Association and 5 different "best" awards from the Mutual Fund Education Alliance. Nevo's content management vision, while far less publicly visible, was equally successful: within a few months of the initial launch, over 30 members of the JH Funds marketing and product management organizations were creating and editing site content.
+                        </p>
+                        <p style="text-align: center; margin-top: 10px">
+                            <a href class="btn btn-success btn-sm close-modal">Close</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modals End -->
+
         <div class="covers"></div>
 
         <script type="text/javascript" src="./js/jquery.min.js"></script>
+        <script type="text/javascript" src="./js/jquery-ui.min.js"></script>
         <script type="text/javascript" src="./js/angular.min.js"></script>
+        <script type="text/javascript" src="./js/angular-animate.min.js"></script>
+        <script type="text/javascript" src="./js/ui-bootstrap-tpls-1.0.3.min.js"></script>
         <script type="text/javascript" src="./js/waypoints.min.js"></script>
         <script type="text/javascript" src="./js/ScrollToPlugin.min.js"></script>
         <script type="text/javascript" src="./js/TweenMax.min.js"></script>
@@ -823,5 +962,47 @@
         <script type="text/javascript" src="./js/jquery.counterup.js"></script>
         <script type="text/javascript" src="./js/readmore.min.js"></script>
         <script type="text/javascript" src="./js/main.js"></script>
+        <script type="text/javascript" src="./js/app.js"></script>
     </body>
+
+    <!--
+    <div id="dialog" class="modal-body" title="READ MORE">
+        <div class="image-block">
+            <img src="./images/ken-ledeen.jpg" alt="Kenn Ledeen" />
+        </div>
+        <div class="team-description">
+            <h5 class="title">Kenneth S. Ledeen</h5>
+            <div style="overflow-y:auto;">
+                <p>
+                    Kenneth S. Ledeen is Chairman and Chief Executive Officer of Nevo Technologies. His strategic vision is to develop and deploy systems that meet mission-critical application needs while employing the most advanced distributed object and internet technologies.
+                </p>
+                <p>Prior to founding Nevo in 1997, Mr. Ledeen was a principal of Covington Associates, providing investment banking, financial advisory, and strategic planning services primarily to high tech and healthcare companies. He has also held senior management positions in several leading computer engineering and software development companies.
+                    A frequent speaker at major industry conferences, Mr. Ledeen serves on the boards of seven technology companies. He holds a BA from Harvard College.
+                </p>
+            </div>
+            <div style="text-align: center">
+                <a href class="btn btn-success btn-sm" id="closer">Close</a>
+            </div>
+        </div>
+    </div> -->
+
+    <!--
+    <script id='templates/modal.html' type='text/ng-template'>
+        <div class="modal-body" ng-click="closeTeamModal('ken')">
+            <div class="close-x">X</div>
+            <div class="image-block">
+                <img src="./images/ken-ledeen.jpg" alt="Kenn Ledeen" />
+            </div>
+            <div class="team-description">
+                <h5 class="title">Kenneth S. Ledeen</h5>
+                <p>
+                    Kenneth S. Ledeen is Chairman and Chief Executive Officer of Nevo Technologies. His strategic vision is to develop and deploy systems that meet mission-critical application needs while employing the most advanced distributed object and internet technologies. Prior to founding Nevo in 1997, Mr. Ledeen was a principal of Covington Associates, providing investment banking, financial advisory, and strategic planning services primarily to high tech and healthcare companies. He has also held senior management positions in several leading computer engineering and software development companies.
+                    A frequent speaker at major industry conferences, Mr. Ledeen serves on the boards of seven technology companies. He holds a BA from Harvard College.
+                </p>
+                <div style="text-align: center">
+                    <a href class="btn btn-success btn-sm" ng-click="closeTeamModal()">Close</a>
+                </div>
+            </div>
+        </div>
+    </script> -->
 </html>

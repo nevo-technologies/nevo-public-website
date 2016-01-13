@@ -104,6 +104,7 @@ $(document).ready(function () {
     });
 
     $(document).on("click", ".mobile-menu-btn", function () {
+        closeModal();
         $(".main-menu").toggleClass("mobile-menu-open");
         $(".mobile-menu-btn").toggleClass("active");
         $("html, body").toggleClass("no-scroll");
@@ -397,6 +398,37 @@ $(document).ready(function () {
         $(".main-section .main-section-title h1, .main-section .main-section-title h3, .main-section .main-section-title a, .main-section.version-4 .arrow-block a").hide().show().resto_animated("fadeInUp", "fadeOutUp");
     }
     //End animation
+
+    // modals open/close
+    var openedModal = null;
+    $(document).on("click", ".open-modal", function(){
+        var id = this.id;
+        openedModal = $("#"+id+"-modal");
+        openedModal.fadeIn("slow");
+        $('html, body').css({
+            'overflow': 'hidden'
+        });
+        $('.ui-widget-overlay').fadeIn("slow");
+        return false;
+    });
+
+    function closeModal() {
+        if (openedModal)
+            openedModal.fadeOut("slow");
+        $('html, body')
+            .delay(1000)
+            .queue(function (next) {
+                $(this).css('overflow', 'auto');
+                next();
+            });
+        $('.ui-widget-overlay').fadeOut("slow");
+        openedModal = null;
+        return false;
+    }
+
+    $(document).on("click", ".close-modal", function(){
+        return closeModal();
+    });
 });
 
 (function ($) {
@@ -505,8 +537,3 @@ function validation (formId) {
     
     return hasError;
 }
-
-var app = angular.module("app", []);
-app.controller("controller", ['$scope', '$filter', function($scope, $filter) {
-    $scope.nowYear = $filter('date')(new Date(),'yyyy');
-}]);

@@ -3,6 +3,11 @@
     height: 380px;
 }
 
+.line-lg {
+    margin-top: 10px !important;
+    margin-botton: 10px !important;
+}
+
 .line-lg span {
     width: 100% !important;
 }
@@ -10,4 +15,27 @@
 .summary {
     margin-top:40px !important;
     margin-bottom:10px !important;
+}
+
+.close-x {
+    position: absolute;
+    right: 15px;
+    top: 5px;
+}
+
+.modal {
+    z-index: 10001 !important;
+    margin-top:70px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width:60% !important;
+    min-width: 320px !important;
+    overflow-y: auto !important;
+}
+
+.ui-widget-overlay {
+    z-index: 10000 !important;
+    opacity: 0.90 !important;
+    filter: Alpha(Opacity=50) !important;
+    background-color: #000000 !important;
 }
