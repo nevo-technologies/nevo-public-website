@@ -18,11 +18,21 @@ ticking = false;
 $(document).ready(function () {
 
     $('.readmore').readmore({
-            speed: 500,
-            moreLink: '<a href="#">Read more</a>',
-            lessLink: '<a href="#">Read less</a>',
-            collapsedHeight: 0
-        });
+        speed: 500,
+        moreLink: '<a href="#">Read more</a>',
+        lessLink: '<a href="#">Read less</a>',
+        collapsedHeight: 0,
+        afterToggle: function(e){},
+        beforeToggle: function(e) {
+            if (e.innerText == "Read more") {
+                this.scrollPosition = $('body').scrollTop();
+            }
+            else if (e.innerText == "Read less" && this.scrollPosition) {
+                $('body').animate({ scrollTop: this.scrollPosition + 'px' }, 200);
+                this.scrollPosition = null;
+            }
+        }
+    });
 
     if ('ontouchstart' in window || 'onmsgesturechange' in window) {
         touch = true;
@@ -537,3 +547,33 @@ function validation (formId) {
     
     return hasError;
 }
+
+(function() {
+    'use strict';
+    angular.module('app', [
+        'ui.bootstrap'
+    ]);
+
+    angular
+        .module('app')
+        .controller('controller', controller);
+
+    controller.$inject = [
+        '$scope', '$filter', '$window'];
+
+    function controller($scope, $filter, $window) {
+
+        $scope.nowYear = $filter('date')(new Date(),'yyyy');
+
+        $scope.isSmallDevice = function() {
+            var widthThr = 320;
+            return $window.innerWidth <= widthThr;
+        }
+
+        $scope.isMediumDevice = function() {
+            var widthThr = 480;
+            return $window.innerWidth <= widthThr;
+        }
+    }
+
+})();
