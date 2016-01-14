@@ -15,8 +15,6 @@
 
         $scope.nowYear = $filter('date')(new Date(),'yyyy');
 
-        $scope.windowHeight = $window.innerHeight;
-
         $scope.openTeamModal = function (name) {
             $uibModal.open({
                 animation: true,

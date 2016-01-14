@@ -52,15 +52,10 @@
                         <li><a href="#about-us">About</a></li>
                         <li><a href="#team">Our people</a></li>
                         <li><a href="#our-knowledge">Our knowledge</a></li>
+                        <li><a href="#services">Services</a></li>
                         <li><a href="#case-studies">Case studies</a></li>
-                        <!-- <li><a href="#products">Products</a></li> -->
-                        <!-- <li><a href="#pricing-block">Pricing</a></li>
-                        <li><a href="#counter-block">Counter</a></li>
-                        <li><a href="#customers">Customers</a></li>
-                        <li><a href="#news">News</a></li> -->
                         <li><a href="#jobs">Jobs</a></li>
                         <li><a href="#contact-us">Contact us</a></li>
-                        <!-- <li><a href="./blog.html">Blog</a></li> -->
                     </ul>
                 </div>
             </nav>
@@ -78,7 +73,7 @@
             </svg>
             <div class="container">
                 <div class="head-title-block main-section-title">
-                    <h1>
+                    <h1 ng-style="{ 'font-size': isSmallDevice() ? '2.2em' : '' }">
                         NEVO TECHNOLOGIES
                     </h1>
                     <h3>QUALITY SOFTWARE. IN TIME. WITHIN BUDGET.</h3>
@@ -94,7 +89,9 @@
         <!-- about-us -->
         <section id="about-us" class="products version-1">
             <h2 class="section-title">About us</h2>
-            <p class="section-description">Information about Nevo and what we do</p>
+            <p class="section-description">Information about Nevo
+                <span ng-if="!isSmallDevice()">and what we do</span>
+            </p>
             <div class="products-body">
                 <div class="container">
                     <div class="row">
@@ -233,74 +230,31 @@
                         </article>
                     </div>
                 </div>
-                <div class="row">
-                    <p class="section section-description text-left" style="color: white">
-                        <h5 style="color: white">Our Technologists</h5>
-                        <div style="color: white; text-align: left">
-                            Nevo's technologists are experts in every phase of the design and implementation process.
-                            We have the capacity to participate from conception to completion, working in concert with your staff or completely taking over product development.
+                <div class="row white-section">
+                    <row>
+                        <div class="col-xs-12 col-sm-12 col-md-12" style="margin-bottom: 10px">
+                            <h5 class="text-center" style="">Our Engineering Team</h5>
+                        </div>
+                    </row>
+                    <row>
+                        <div class="col-xs-12 col-sm-12 col-md-3" style="margin-right: 40px; margin-bottom: 20px">
+                            <img src="./images/software-team.jpg" style="max-height: 200px; max-width: 100%">
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-8">
+                            <p>
+                                Nevo's technologists are experts in every phase of the design and implementation process.
+                                We have the capacity to participate from conception to completion, working in concert with your staff or completely taking over product development.
+                            </p><p>
                             Unifying our breadth of skills is a single-minded ability to find creative answers to technological challenges — the more complex the better.
                             And unlike the code-and-go approach of some companies, our team collaborates with yours to identify critical factors, implement new solutions, and deploy them rapidly.
                             In fact, we believe this intense engagement is what ensures our mutual success.
+                        </p>
                         </div>
-                    </p>
+                    </row>
                 </div>
             </div>
         </section>
         <!-- Team end -->
-
-        <!-- services -->
-        <section id="services" class="info-block version-1" ng-if="false">
-            <h2 class="section-title">SERVICES</h2>
-            <p class="section-description">We can help you build software in a way that meets your need.</p>
-            <div class="container">
-                <div class="row">
-                    <div class="info-block-inner">
-                        <div class="col-xs-12 col-sm-6 col-md-3 info-block-col">
-                            <div class="info-block-img">
-                                <img src="./images/services1.jpg" alt="" />
-                                <!-- <i class="fa fa-plane"></i> -->
-                            </div>
-                            <h5>Complete Software Development Services</h5>
-                            <p>We can bring a full development team to bear, facilitate initial requirements discovery, iteratively implement and refine the solution, and work with you to confirm it meets your needs and ensure a smooth handoff.</p>
-                        </div>
-
-                        <div class="col-xs-12 col-sm-6 col-md-3 info-block-col">
-                            <div class="info-block-img">
-                                <img src="./images/services2.jpg" alt="" />
-                                <!-- <i class="fa fa-plane"></i> -->
-                            </div>
-                            <h5>Augment your team</h5>
-                            <p>Some of our clients just need some additional capable set of hands.  We can engage experienced developers to work with your team on-site or remotely.</p>
-                        </div>
-
-                        <div class="col-xs-12 col-sm-6 col-md-3 info-block-col">
-                            <div class="info-block-img">
-                                <img src="./images/services3.jpg" alt="" />
-                                <!-- <i class="fa fa-plane"></i> -->
-                            </div>
-                            <h5>Project Management Guidance</h5>
-                            <p>We can analyze your current requirements management and development practices, and recommend ways to improve it.</p>
-                        </div>
-
-                        <div class="col-xs-12 col-sm-6 col-md-3 info-block-col">
-                            <div class="info-block-img">
-                                <img src="./images/services4.jpg" alt="" />
-                                <!-- <i class="fa fa-plane"></i> -->
-                            </div>
-                            <h5>Any combination</h5>
-                            <p>We are happy to talk about any software needs, and determine an optimal way to help you reach your goals.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <p class="section-description summary">
-                        Most importantly, you have complete ownership of all work products, and Nevo retains no rights to the intellectual property of our engagements.
-                    </p>
-                </div>
-            </div>
-        </section>
-        <!-- services end -->
 
         <!-- pricing -->
         <!-- <section id="pricing-block" class="pricing-block version-1">
@@ -469,7 +423,88 @@
         <!-- knowledge -->
         <section id="our-knowledge" class="news-home version-1">
             <h2 class="section-title">Our knowledge</h2>
-            <p class="section-description">You may be interested in our white papers</p>
+            <p ng-if="!isSmallDevice()"
+               class="section-description margin-top">
+                    Our expertise
+            </p>
+            <div class="products-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="products-list">
+                            <article>
+                                <div class="col-xs-12 col-sm-6 prod-image">
+                                    <img src="./images/knowledge.jpg" alt="Knowledge"
+                                         min-height="320px" style="max-width:100%; margin-bottom: 10px"/>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 prod-description text-left">
+                                    <p>
+                                        At Nevo, we feel it is our responsibility to understand your challenges, needs, and opportunities, and then to choose or craft the solution that best matches your unique constraints. In order to keep up with the latest industry trends and technological capabilities, we communicate continually with others in the field and maintain strategic affiliations with major industry groups.
+                                    </p><p>
+                                        Although we fearlessly experiment with pre-release products on our own, we protect our clients from the risks involved in working with bleeding-edge technology. Having done the research and experienced the learning curve, we recommend and implement solutions only when we have confidence in their long-term viability as well as their appropriateness to the task at hand.
+                                    </p>
+                                    <div>
+                                        <p>
+                                        Nevo technologists have practical experience in the following technologies:
+                                        </p>
+                                        <ul class="readmore"><li>Agile Metholdology (SCRUM)
+                                        </li><li>Angular
+                                        </li><li>ASP, ASP.NET
+                                        </li><li>Business Rule Management (BRM)
+                                        </li><li>C++
+                                        </li><li>C#
+                                        </li><li>COM/DCOM
+                                        </li><li>Confluence
+                                        </li><li>Continous Integration
+                                        </li><li>CruiseControl.Net
+                                        </li><li>CSS
+                                        </li><li>Data Replication / Data Distribution (often in the context of occasionally connected applications)
+                                        </li><li>Dependency Injection / Inversion of Control
+                                        </li><li>DHTML
+                                        </li><li>Enterprise Application Integration (EAI)
+                                        </li><li>Enterprise Architect (modelling tool)
+                                        </li><li>EJB
+                                        </li><li>Entity Framework
+                                        </li><li>F# (functional programming)
+                                        </li><li>Google Gears
+                                        </li><li>HTML (including HTML5)
+                                        </li><li>JSP
+                                        </li><li>Jira
+                                        </li><li>Java, J2EE
+                                        </li><li>Javascript
+                                        </li><li>LINQ
+                                        </li><li>Messaging (MQSeries, MSMQ, WCF)
+                                        </li><li>N-Tiered Design
+                                        </li><li>.NET
+                                        </li><li>.NET Windows Forms
+                                        </li><li>Nolij (document management)
+                                        </li><li>Object Oriented Desighn(OOD)
+                                        </li><li>OR Mapping (Hibernate, nHibernate, iBatis)
+                                        </li><li>Oracle
+                                        </li><li>Performance analysis / optimization
+                                        </li><li>Relational DBMS
+                                        </li><li>ScrumDesk (Agile / Scrum tool)
+                                        </li><li>SQLServer
+                                        </li><li>Servlets
+                                        </li><li>Service Oriented Architectures(SOA)
+                                        </li><li>Struts / Struts2
+                                        </li><li>Sybase
+                                        </li><li>UML
+                                        </li><li>Unit Testing (jUnit / nUnit)
+                                        </li><li>VBScript
+                                        </li><li>WebMethods
+                                        </li><li>WebSphere
+                                        </li><li>WPF
+                                        </li><li>XML/XSL/XSLT
+                                        </li></ul>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="line-lg"><span></span></p>
+            <p class="section-description margin-top">You may be interested in our white papers</p>
             <div class="news-body">
                 <div class="container">
                     <div class="row">
@@ -482,16 +517,17 @@
                                     <h5>10X Development: High Performance Software Teams</h5>
                                     <p class="line-lg"><span></span></p>
                                     <p class="news-text-block-text">
-                                        <p>A High Performance Software Team is remarkably similar to a winning sports team. It needs talent,
-                                    leadership, structure, and spirit. Just like a winning sports team, it doesn’t need to be filled with
-                                    superstars, but it can’t have any laggards either. The 1983 Celtics had Larry Bird and Robert Parish, but
-                                    it took more than two stars to win. (Van Riper, 2008) Talent is a necessary, but not sufficient condition
-                                    for success. Like sports teams, High Performance Software Teams also need leadership, strategy,
-                                    discipline, and coordination. They need to know how to work together as a cohesive unit. Consequently, it
-                                    often takes time for an HPT to mature, to find the winning groove.
+                                    <p>A High Performance Software Team is remarkably similar to a winning sports team. It needs talent,
+                                        leadership, structure, and spirit. Just like a winning sports team, it doesn’t need to be filled with
+                                        superstars, but it can’t have any laggards either. The 1983 Celtics had Larry Bird and Robert Parish, but
+                                        it took more than two stars to win. (Van Riper, 2008) Talent is a necessary, but not sufficient condition
+                                        for success. Like sports teams, High Performance Software Teams also need leadership, strategy,
+                                        discipline, and coordination. They need to know how to work together as a cohesive unit. Consequently, it
+                                        often takes time for an HPT to mature, to find the winning groove.
                                         <a target="_blank" href="./whitepapers/high-performance-software-teams.pdf">
-                                            Read more...
-                                        </a></p>
+                                            <br/><img src="./images/pdf-icon.png" alt="pdf" height="25px">
+                                            <span style="position: relative; top:5px">Read more</span>
+                                        </a>
                                     </p>
                                 </div>
                             </div>
@@ -508,7 +544,8 @@
                                     mean the difference between a successful project – one that satisfies the needs of its users
                                     and is delivered on-time and on-budget – and one that fails.
                                         <a target="_blank" href="./whitepapers/requirements-gathering-process.pdf">
-                                            Read more...
+                                            <br/><img src="./images/pdf-icon.png" alt="pdf" height="25px">
+                                            <span style="position: relative; top:5px">Read more</span>
                                         </a></p>
                                     </p>
                                 </div>
@@ -528,7 +565,8 @@
                                     but a solid understanding of the differences between the two, and a structured approach,
                                     can remove both the uncertainty and the risk from this critical decision.
                                     <a target="_blank" href="./whitepapers/build-vs-buy.pdf">
-                                            Read more...
+                                        <br/><img src="./images/pdf-icon.png" alt="pdf" height="25px">
+                                        <span style="position: relative; top:5px">Read more</span>
                                         </a></p>
                                     </p>
                                 </div>
@@ -547,7 +585,8 @@
                                         the critical factros that influence the long-term success of a software implementation,
                                         combined with a structured approach...
                                         <a target="_blank" href="./whitepapers/nevo-vendor-selection.pdf">
-                                            Read more...
+                                            <br/><img src="./images/pdf-icon.png" alt="pdf" height="25px">
+                                            <span style="position: relative; top:5px">Read more</span>
                                         </a></p>
                                     </p>
                                 </div>
@@ -566,7 +605,8 @@
                                     refinement, and, like champion teams, embody the ability to respond dynamically to changing
                                     circumstances.
                                         <a target="_blank" href="./whitepapers/building-a-high-performance-team.pdf">
-                                            Read more...
+                                            <br/><img src="./images/pdf-icon.png" alt="pdf" height="25px">
+                                            <span style="position: relative; top:5px">Read more</span>
                                         </a></p>
                                     </p>
                                 </div>
@@ -577,6 +617,61 @@
             </div>
         </section>
         <!-- knowledge end -->
+
+        <!-- services -->
+        <section id="services" class="info-block version-1" style="padding-top: 0px">
+            <p class="line-lg"><span></span></p>
+            <h2 class="section-title">SERVICES</h2>
+            <p class="section-description">We can help you build software in a way that meets your need.</p>
+            <div class="container">
+                <div class="row">
+                    <div class="info-block-inner">
+                        <div class="col-xs-12 col-sm-6 col-md-3 info-block-col">
+                            <div class="info-block-img">
+                                <img src="./images/services1.jpg" alt="" />
+                                <!-- <i class="fa fa-plane"></i> -->
+                            </div>
+                            <h5>Complete Software Development Services</h5>
+                            <p>We can bring a full development team to bear, facilitate initial requirements discovery, iteratively implement and refine the solution, and work with you to confirm it meets your needs and ensure a smooth handoff.</p>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-6 col-md-3 info-block-col">
+                            <div class="info-block-img">
+                                <img src="./images/services2.jpg" alt="" />
+                                <!-- <i class="fa fa-plane"></i> -->
+                            </div>
+                            <h5>Augment your team</h5>
+                            <p>Some of our clients just need some additional capable set of hands.  We can engage experienced developers to work with your team on-site or remotely.</p>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-6 col-md-3 info-block-col">
+                            <div class="info-block-img">
+                                <img src="./images/services3.jpg" alt="" />
+                                <!-- <i class="fa fa-plane"></i> -->
+                            </div>
+                            <h5>Project Management Guidance</h5>
+                            <p>We can analyze your current requirements management and development practices, and recommend ways to improve it.</p>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-6 col-md-3 info-block-col">
+                            <div class="info-block-img">
+                                <img src="./images/services4.jpg" alt="" />
+                                <!-- <i class="fa fa-plane"></i> -->
+                            </div>
+                            <h5>Any combination</h5>
+                            <p>We are happy to talk about any software needs, and determine an optimal way to help you reach your goals.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 20px">
+                    <p class="line-lg"><span></span></p>
+                    <p class="section-description summary text-left">
+                        Most importantly, you have complete ownership of all work products, and Nevo retains no rights to the intellectual property of our engagements.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!-- services end -->
 
         <!-- case studies -->
         <section id="case-studies" class="customers version-1">
@@ -649,12 +744,12 @@
                         <div class="products-list">
                             <article>
                                 <div class="col-xs-12 col-sm-6 prod-image">
-                                    <img src="./images/jobs.jpg" alt="Jobs at Nevo" />
+                                    <img src="./images/jobs.jpg" alt="Jobs at Nevo" style="max-width: 100%"/>
                                 </div>
                                 <div class="col-xs-12 col-sm-6 prod-description">
                                     <h5>Work at Nevo</h5>
-                                    <p class="line-lg"><span></span>
-                                    </p><p>
+                                    <p class="line-lg"><span></span></p>
+                                    <p>
                                         Nevo was created by developers, for developers. We knew from the outset that our ability to build a successful software development consulting business depended entirely on our ability to attract, develop, and retain top talent. We have worked hard to do just that, and have created a unique organization.
                                     </p><p>
                                         The two most meaningful indicators of our success are that our clients return year after year and project after project, and that we have extremely low staff turnover.
@@ -664,10 +759,9 @@
                                     </p>
                                     <div class="readmore">
                                         <p>
-                                        We have worked hard for nearly two decades to make this happen.<br/>
-                                        Here's how:
-                                    </p>
-                                        <p>
+                                            We have worked hard for nearly two decades to make this happen.<br/>
+                                            Here's how:
+                                        </p><p>
                                             <ul>
                                                 <li>We do exciting work. We use the latest technologies to develop applications. Developers at Nevo are constantly challenged by new projects and new ideas. If you like learning new things then you will love it here. If you want to apply and reapply the same stuff you learned years ago, you won't be happy here at all.
                                                 </li>
@@ -685,8 +779,7 @@
                                                 <li>and Nevo is 100% employee owned. In 2009, 100% of the equity was purchased by the Nevo Employees Stock Ownership Trust. Nevo's current and future staff all benefit directly -and substantially- from owning 100% of the equity in the business.
                                                 </li>
                                             </ul>
-                                        </p>
-                                        <p>
+                                        </p><p>
                                             We look for people who:
                                         </p><p>
                                             <ul>
@@ -719,7 +812,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-8 col-md-9">
-                        <header>
+                        <header style="">
                             <h2 class="section-title">Contact us</h2>
                             <p class="section-description">Feel free to contact us</p>
                         </header>
@@ -763,7 +856,7 @@
         <!-- footer -->
         <footer>
             <div class="container">
-                <div class="row">
+                <div class="row" style="padding-bottom: 20px">
                     <div class="col-md-4 col-sm-6 footer-contacts-col">
                         <h4>Contacts</h4>
 
@@ -813,7 +906,7 @@
                     </div> -->
 
                     <div class="col-md-8 map-block">
-                        <div id="map"></div>
+                        <div id="map" style="max-height: 300px; margin: 5px;"></div>
                         <span class="open-map">
                             <!-- <svg x="0px" y="0px" viewBox="0 0 67.1 88.7" enable-background="new 0 0 67.1 88.7"> -->
                             <path class="pin-color" d="M59.1,55.3c4.7-6.1,8-13.4,8-21.8C67.1,15,52.1,0,33.6,0C15,0,0,15,0,33.6c0,8.3,3.3,15.7,8,21.8
