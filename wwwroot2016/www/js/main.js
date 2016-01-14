@@ -550,9 +550,7 @@ function validation (formId) {
 
 (function() {
     'use strict';
-    angular.module('app', [
-        'ui.bootstrap'
-    ]);
+    angular.module('app', []);
 
     angular
         .module('app')
