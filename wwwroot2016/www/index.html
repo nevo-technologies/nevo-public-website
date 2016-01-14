@@ -841,7 +841,7 @@
                         </div>
                     </div>
                 </div>
-                
+
             </div>
         </section>
         <!-- contact-us block end -->
@@ -858,45 +858,7 @@
                         <p class="footer-adress">26 Church Street, Cambridge, MA</p>
                         <a class="footer-tell" href="tel:+16173546386">617.354.NEVO (6386)</a>
                         <a class="footer-mail" href="mailto:info@nevo.com">info@nevo.com</a>
-
-                        <!-- <ul class="footer-social">
-                            <li><a href="#"><span class="fa fa-linkedin"></span></a></li>
-                            <li><a href="#"><span class="fa fa-pinterest-p"></span></a></li>
-                            <li><a href="#"><span class="fa fa-twitter"></span></a></li>
-                            <li><a href="#"><span class="fa fa-facebook"></span></a></li>
-                        </ul> -->
-
-                        <div class="footer-copyright">
-                            <p>&copy;&nbsp;{{nowYear}}&nbsp;Nevo&nbsp;Technologies,&nbsp;Inc.</p>
-                            <p>All&nbsp;rights&nbsp;reserved</p>
-                        </div>
                     </div>
-                    <!-- <div class="col-md-3 col-sm-6 footer-services-col">
-                        <h4>SERVICES</h4>
-                        <p class="line-lg"><span></span></p>
-
-                        <a class="services-footer" href="#">Business processes</a>
-                        <a class="services-footer" href="#">Deal services</a>
-                        <a class="services-footer" href="#">Business processes</a>
-
-                        <h5>Instagram</h5>
-                        <ul class="instagram-list">
-                            <li>
-                                <a href="#">
-                                    <img src="./images/team-v2.jpg" alt="" />
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/team-v2.jpg" alt="" />
-                                </a>
-                            </li><li>
-                                <a href="#">
-                                    <img src="./images/team-v2.jpg" alt="" />
-                                </a>
-                            </li>
-                        </ul>
-                    </div> -->
 
                     <div class="col-md-8 map-block">
                         <div id="map" style="max-height: 300px; margin: 5px;"></div>
@@ -907,6 +869,17 @@
                             <circle fill="#FFFFFF" cx="33.6" cy="33.6" r="17.8"/>
                             </svg>
                         </span>
+                    </div>
+                </div>
+                <div class="row text-center" style="padding-bottom: 20px">
+                    <div ng-if="isSmallDevice()">
+                        <p class="line-lg"><span></span></p>
+                        <p>&copy;&nbsp;{{nowYear}}&nbsp;Nevo&nbsp;Technologies,&nbsp;Inc.<br>
+                        All&nbsp;rights&nbsp;reserved</p>
+                    </div>
+                    <div ng-if="!isSmallDevice()">
+                        <p class="line-lg"><span></span></p>
+                        <p>&copy;&nbsp;{{nowYear}}&nbsp;Nevo&nbsp;Technologies,&nbsp;Inc.&nbsp;All&nbsp;rights&nbsp;reserved</p>
                     </div>
                 </div>
             </div>
