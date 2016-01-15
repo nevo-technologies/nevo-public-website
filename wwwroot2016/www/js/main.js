@@ -332,12 +332,25 @@ $(document).ready(function () {
 
     var tid = setInterval(autoStartSliders, 2500);
     function autoStartSliders() {
+        if (openedModal)
+            return;
         var now = jQuery.now();
-        if (sliderStopped && sliderStoppedClock > 0 && now - sliderStoppedClock > 5000) {
+        var delayStart = 5000;
+        var stoppingSliders = false;
+        _.each(allSliders, function (slider) {
+            if (stoppingSliders)
+                return;
+            if (slider.data.touchedClock && now - slider.data.touchedClock <= delayStart) {
+                stoppingSliders = true;
+                stopSliders();
+            }
+        });
+        if (!stoppingSliders && sliderStopped && sliderStoppedClock > 0 && now - sliderStoppedClock > delayStart) {
             sliderStopped = false;
             sliderStoppedClock = 0;
             _.forEach(allSliders, function (slider) {
-                slider.play();
+                if (!slider.data.touchedClock || now - slider.data.touchedClock > delayStart)
+                    slider.play();
             });
             console.log('started sliders!');
         }
@@ -365,6 +378,7 @@ $(document).ready(function () {
     // modals open/close
     var openedModal = null;
     $(document).on("click", ".open-modal", function(){
+        stopSliders();
         var id = this.id;
         openedModal = $("#"+id+"-modal");
         openedModal.fadeIn("slow");

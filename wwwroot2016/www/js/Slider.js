@@ -580,6 +580,7 @@
 
             _self.data.mouseStart = event.touches[0].clientX || event.touches[0].pageX;
             _self.data.canDrag = true;
+            _self.data.touchClock = jQuery.now();
         });
 
         window.addEventListener('touchend', function (event) {
@@ -609,6 +610,8 @@
             TweenMax.to(_self.nodes.$slides, .5, {x: _self.data.difference, onComplete: function () {
                 _self.setSlides();
             }});
+
+            _self.data.touchClock = jQuery.now();
         }, false);
 
         window.addEventListener('touchmove', function (event) {
@@ -634,6 +637,7 @@
             _self.followMouse();
 
             _self.data.isDragging = true;
+            _self.data.touchClock = jQuery.now();
         }, false);
     }
 
@@ -873,6 +877,7 @@
                 return;
             _self.data.mouseStart = event.clientX || event.pageX;
             _self.data.canDrag = true;
+            _self.data.touchedClock = jQuery.now();
         }, false);
 
         window.addEventListener('mouseup', function (event) {
@@ -890,6 +895,7 @@
                 return;
             }
             _self.resetSlides();
+            _self.data.touchedClock = jQuery.now();
         }, false);
 
         window.addEventListener('mousemove', function (event) {
@@ -916,6 +922,7 @@
             _self.followMouse();
 
             _self.data.isDragging = true;
+            _self.data.touchedClock = jQuery.now();
         }, false);
 
         _sliderScene.addEventListener('touchstart', function (event) {
@@ -923,6 +930,7 @@
                 return;
             _self.data.mouseStart = event.touches[0].clientX || event.touches[0].pageX;
             _self.data.canDrag = true;
+            _self.data.touchedClock = jQuery.now();
         }, false);
 
         _sliderScene.addEventListener('touchend', function (event) {
@@ -939,6 +947,7 @@
                 return;
             }
             _self.resetSlides();
+            _self.data.touchedClock = jQuery.now();
         }, false);
 
         _sliderScene.addEventListener('touchmove', function (event) {
@@ -966,6 +975,7 @@
             _self.followMouse();
 
             _self.data.isDragging = true;
+            _self.data.touchedClock = jQuery.now();
         }, false);
     }
 
@@ -988,6 +998,7 @@
             TweenMax.set($slide, {x: moveDistance, scale: 1 + 0.02 * p_dif});
             TweenMax.set(_self.nodes.$current, {x: currMove, opacity: 1 - p_dif * 2});
             _self.followMouse();
+            _self.data.touchedClock = jQuery.now();
         });
     }
 
@@ -999,6 +1010,8 @@
             _self._parent.setSlides(_self.nodes.$next);
         }});
         TweenMax.to(this.nodes.$current, .7, {opacity: 0, x: '-40%', ease: Power2.easeOut, clearProps: "transform, opacity"});
+
+        _self.data.touchedClock = jQuery.now();
     }
     
     AccordionSlider.prototype.previous = function () {
@@ -1010,6 +1023,8 @@
         }});
         
         TweenMax.to(this.nodes.$current, .7, {opacity: 0, x: '40%', ease: Power2.easeOut, clearProps: "transform, opacity"});
+
+        _self.data.touchedClock = jQuery.now();
     }
 
     AccordionSlider.prototype.slideTo = function ($to, $current) {

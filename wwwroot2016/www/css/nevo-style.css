@@ -63,3 +63,7 @@
     top: -1px !important;
     height: 101% !important;
 }
+
+.padding {
+    padding: 15px !important;
+}

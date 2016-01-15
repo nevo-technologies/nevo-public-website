@@ -659,14 +659,14 @@
             </div>
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-8 col-md-9">
+                    <div class="col-sm-8 col-md-8 col-lg-8">
                         <header style="">
                             <h2 class="section-title">Contact us</h2>
                             <p class="section-description">Feel free to contact us</p>
                         </header>
                         <form id="formReservation" autocomplete="on">
-                            <div class="row">
-                                <div class="col-sm-6 nopadding-right">
+                            <div class="row padding">
+                                <div>
                                     <div class="input-group">
                                         <div class="input-group-addon"><span class="fa fa-user"></span></div>
                                         <input type="text" name="u_name" placeholder="Name" class="form-control requiredField name" value="" />
@@ -680,7 +680,7 @@
                                         <input type="email" name="u_mail" placeholder="Enter email" class="form-control requiredField email" value="" />
                                     </div>
                                 </div>
-                                <div class="col-sm-6">
+                                <div>
                                     <div class="input-group mail-block">
                                         <div class="input-group-addon"><span class="fa fa-pencil"></span></div>
                                         <textarea class="form-control message" name="u_text" placeholder="Message" rows="4"></textarea>
@@ -690,13 +690,10 @@
                             </div>
                         </form>
                     </div>
-                    <div class="col-sm-4 col-md-3 nopadding-left" ng-hide="isMediumDevice()">
-                        <div class="subscribe hidden-sm hidden-xs">
-                            <img src="./images/contact-us.jpg" alt="">
-                        </div>
+                    <div class="col-sm-4 col-md-4 col-lg-4 hidden-xs nopadding">
+                        <img src="./images/contact-us.jpg?v=1" alt="Contact" width="100%" height="470px">
                     </div>
                 </div>
-
             </div>
         </section>
         <!-- contact-us block end -->
@@ -705,7 +702,7 @@
         <footer>
             <div class="container">
                 <div class="row" style="padding-bottom: 20px">
-                    <div class="col-sm-12 col-md-12 footer-contacts-col">
+                    <div class="col-md-12 col-lg-4">
                         <h4>Location</h4>
                         <p>
                             Nevo Technologies, Inc. is located in Cambridge Massachusetts.
@@ -715,12 +712,12 @@
                         <p class="footer-adress">26 Church Street, Cambridge, MA</p>
                         <a class="footer-tell" href="tel:+16173546386">617.354.NEVO (6386)</a>
                         <a class="footer-mail" href="mailto:info@nevo.com">info@nevo.com</a>
-                        <p style="text-align: center; margin-top: 50px; margin-bottom: 50px">
+                        <p style="text-align: center; margin-top: 30px; margin-bottom: 30px;">
                             <a id="directions" href class="btn btn-success btn-sm open-modal">Directions & Parking</a>
                         </p>
                     </div>
 
-                    <div class="col-md-8 map-block">
+                    <div class="col-md-12 col-lg-8 map-block margin-top">
                         <div id="map" style="max-height: 300px; margin: 5px;"></div>
                         <span class="open-map">
                             <svg x="0px" y="0px" viewBox="0 0 67.1 88.7" enable-background="new 0 0 67.1 88.7">
@@ -732,13 +729,12 @@
                     </div>
                 </div>
                 <div class="row text-center" style="padding-bottom: 20px">
-                    <div ng-if="isSmallDevice()">
-                        <p class="line-lg"><span></span></p>
+                    <p class="line-lg"><span></span></p>
+                    <div class="hidden-md hidden-lg">
                         <p>&copy;&nbsp;{{nowYear}}&nbsp;Nevo&nbsp;Technologies,&nbsp;Inc.<br>
                         All&nbsp;rights&nbsp;reserved</p>
                     </div>
-                    <div ng-if="!isSmallDevice()">
-                        <p class="line-lg"><span></span></p>
+                    <div class="hidden-xs hidden-sm">
                         <p>&copy;&nbsp;{{nowYear}}&nbsp;Nevo&nbsp;Technologies,&nbsp;Inc.&nbsp;All&nbsp;rights&nbsp;reserved</p>
                     </div>
                 </div>
