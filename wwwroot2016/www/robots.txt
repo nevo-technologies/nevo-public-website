@@ -1,0 +1,11 @@
+User-agent: *
+Disallow: /bourbon/
+Disallow: /css/
+Disallow: /fonts/
+Disallow: /images/
+Disallow: /includes/
+Disallow: /our-home/
+Disallow: /our-knowledge/
+Disallow: /our-people/
+Disallow: /our-story/
+Disallow: /sass/
