@@ -57,3 +57,9 @@
 .team-body {
     max-width: 300px !important;
 }
+
+.open-map {
+    border: solid 1px black;
+    top: -1px !important;
+    height: 101% !important;
+}
