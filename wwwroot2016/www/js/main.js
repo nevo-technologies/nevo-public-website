@@ -38,8 +38,8 @@ $(document).ready(function () {
         touch = true;
     }
 
-    var footerHeight = $('footer').height(),
-        map;
+    var footerHeight = $('footer').height();
+    var map = null;
 
     $(window).on('load', function () {
         // PRELOADER
@@ -133,39 +133,6 @@ $(document).ready(function () {
     // footer height
     $('body').css('padding-bottom', footerHeight);
     // footer height END
-    
-
-    // google map init map
-    function initialize() {
-        map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 16,
-            scrollwheel: false,
-            center: {lat: 42.374366, lng: -71.119987}
-        });
-
-        // marker
-        var marker = new google.maps.Marker({
-        map: map,
-        position: {lat: 42.374366, lng: -71.119987},
-        title: "Nevo's Headquarters"
-      });
-
-    }
-    google.maps.event.addDomListener(window, 'load', initialize);
-    // google map END
-
-    // footer map open  
-        $(document).on("click", ".open-map", function () {
-            $(this).addClass("_open-map");
-            return false;
-        });
-        $(document).on("click", "#map", function () {
-            return false;
-        });
-        $(document).on("click", "body", function () {
-            $('.open-map').removeClass("_open-map");
-        });
-    // footer map open end    
 
     // anchor scrollTo
     if($("body").hasClass("index")) {
@@ -482,7 +449,6 @@ $(document).ready(function () {
     }
 }());
 
-
 function updateParallax() {
     ticking = false;
     Parallax.update();
@@ -493,6 +459,39 @@ function requestAnimation() {
         requestAnimationFrame(updateParallax);
     }
     ticking = true;
+}
+
+function initMap() {
+    // google map init map
+    function initialize() {
+        map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 16,
+            scrollwheel: false,
+            center: {lat: 42.374366, lng: -71.119987}
+        });
+
+        // marker
+        var marker = new google.maps.Marker({
+            map: map,
+            position: {lat: 42.374366, lng: -71.119987},
+            title: "Nevo's Headquarters"
+        });
+    }
+
+    google.maps.event.addDomListener(window, 'load', initialize);
+    // google map END
+
+    // footer map open
+    $(document).on("click", ".open-map", function () {
+        $(this).addClass("_open-map");
+        return false;
+    });
+    $(document).on("click", "#map", function () {
+        return false;
+    });
+    $(document).on("click", "body", function () {
+        $('.open-map').removeClass("_open-map");
+    });
 }
 
 function validation (formId) {
