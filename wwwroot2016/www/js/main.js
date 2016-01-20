@@ -559,18 +559,6 @@ function validation (formId) {
         '$scope', '$filter', '$window'];
 
     function controller($scope, $filter, $window) {
-
         $scope.nowYear = $filter('date')(new Date(),'yyyy');
-
-        $scope.isSmallDevice = function() {
-            var widthThr = 320;
-            return $window.innerWidth <= widthThr;
-        }
-
-        $scope.isMediumDevice = function() {
-            var widthThr = 480;
-            return $window.innerWidth <= widthThr;
-        }
     }
-
 })();
