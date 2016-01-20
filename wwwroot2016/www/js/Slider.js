@@ -407,13 +407,17 @@
 
     Slider.prototype.play = function () {
         var _self = this;
+        _self.data.stopped = false;
         this.data.timer = setInterval(function(){
-            _self.next();
+            if (!_self.data.stopped)
+                _self.next();
         }, this.settings.time);
     }
 
     Slider.prototype.stop = function () {
+        var _self = this;
         clearInterval(this.data.timer);
+        _self.data.stopped = true;
     }
 
     Slider.prototype.initEvent = function () {
@@ -436,8 +440,8 @@
             _self.stop();
         });
         _sliderScene.addEventListener('mouseleave', function(){
-            if(_self.settings.autoplay)
-                _self.play();     
+            if(_self.settings.autoplay && !_self.data.stopped)
+                _self.play();
         });
     }
 
@@ -783,6 +787,7 @@
         this.nodes.$dots.each(function (index) {
             this.addEventListener('click', function (event) {
                 _self._parent.slideToPage(index);
+                _self.data.touchedClock = jQuery.now();
             }, false);
         });
     }

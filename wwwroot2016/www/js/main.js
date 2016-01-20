@@ -378,7 +378,6 @@ $(document).ready(function () {
     // modals open/close
     var openedModal = null;
     $(document).on("click", ".open-modal", function(){
-        stopSliders();
         var id = this.id;
         openedModal = $("#"+id+"-modal");
         openedModal.fadeIn("slow");
@@ -386,6 +385,7 @@ $(document).ready(function () {
             'overflow': 'hidden'
         });
         $('.ui-widget-overlay').fadeIn("slow");
+        stopSliders();
         return false;
     });
 
