@@ -230,7 +230,7 @@ $(document).ready(function () {
     // share links open end
     
     //Reserve form validation
-    $(document).on("submit", "form#formSendFedback, form#formSendFedback-2", function() {
+    $(document).on("submit", "form#formSendFeedback, form#formSendFeedback-2", function() {
         if(!validation($(this).attr("id"))) {
             //here code if validation is successful
         }
@@ -500,43 +500,44 @@ function validation (formId) {
     $('form#'+ formId +' .form-control').removeClass('inputError');
     var hasError = false;
     $('form#'+ formId +' .requiredField').each(function() {
+        var spanError = '<span class="field-error" style="background-color: white; padding:1px 4px 1px 4px; color:red;">';
         if(jQuery.trim($(this).val()) == '' || jQuery.trim($(this).val()) == jQuery.trim($(this).attr('placeholder'))){
-            $(this).parent().append('<strong class="field-error">This is a required field</strong>');
+            $(this).parent().append(spanError + 'This is a required field</span>');
             $(this).addClass('inputError');
             hasError = true;
         } else {
             if($(this).hasClass('email')) {
                 var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
                 if(!emailReg.test(jQuery.trim($(this).val()))){
-                    $(this).parent().append('<strong class="field-error">Please enter a valid email address.</strong>');
+                    $(this).parent().append(spanError + 'Please enter a valid email address.</span>');
                     $(this).addClass('inputError');
                     hasError = true;
                 } 
             } else if($(this).hasClass('phone')) {
                 var phoneReg = /^\+?[0-9 ]*$/;
                 if(!phoneReg.test(jQuery.trim($(this).val()))){
-                    $(this).parent().append('<strong class="field-error">Please enter a valid phone number.</strong>');
+                    $(this).parent().append(spanError + 'Please enter a valid phone number.</span>');
                     $(this).addClass('inputError');
                     hasError = true;
                 } 
             } else if($(this).hasClass('date')) {
                 var dateReg = /^[0-9]{2}\/[0-9]{2}\/[0-9]{4}$/;
                 if(!dateReg.test(jQuery.trim($(this).val()))){
-                    $(this).parent().append('<strong class="field-error">Please enter a valid date.</strong>');
+                    $(this).parent().append(spanError + 'Please enter a valid date.</span>');
                     $(this).addClass('inputError');
                     hasError = true;
                 } 
             } else if($(this).hasClass('time')) {
                 var dateReg = /^[0-9]{2}:[0-9]{2}$/;
                 if(!dateReg.test(jQuery.trim($(this).val()))){
-                    $(this).parent().append('<strong class="field-error">Please enter a valid time.</strong>');
+                    $(this).parent().append(spanError + 'Please enter a valid time.</span>');
                     $(this).addClass('inputError');
                     hasError = true;
                 } 
             } else if($(this).hasClass('persons')) {
                 var personsReg = /^[1-9]{1}[0-9]{0,1}$/;
                 if(!personsReg.test(jQuery.trim($(this).val()))){
-                    $(this).parent().append('<strong class="field-error">Please enter a valid number of persons.</strong>');
+                    $(this).parent().append(spanError + 'Please enter a valid number of persons.</span>');
                     $(this).addClass('inputError');
                     hasError = true;
                 } 
@@ -564,8 +565,8 @@ function validation (formId) {
     	$scope.nowYear = $filter('date')(new Date(), 'yyyy');
 
     	$scope.typingMessage = function () {
-    		$scope.errorMessage = undefined;
-    		$scope.goodMessage = $scope.errorMessage = undefined;
+    		//$scope.errorMessage = undefined;
+    		//$scope.goodMessage = $scope.errorMessage = undefined;
     	}
 
     	$scope.sendMail = function() {
@@ -585,10 +586,14 @@ function validation (formId) {
     		$scope.sendBusy = true;
     		$http.get(url).then(function (response) {
     			$scope.message = "";
-    			$scope.goodMessage = "Your message had been sent!";
+    		    var badResponse = !response || !response.data || response.data.substring(0,1) == '<';
+    		    if (badResponse)
+    		        $scope.badMessage = "Unable to send your message!";
+    		    else
+        			$scope.goodMessage = "Thank You! Your message was sent successfully!";
     		}, function (error) {
     			if (error) console.log(error);
-    			$scope.badMessage = "Oh! Sorry but somthing bad happend and we could not send your message!"
+    			$scope.badMessage = "Oh! Sorry but something bad happened and we could not send your message!"
     		}).finally(function () {
     			$timeout(function () {
     				$scope.sendBusy = false;

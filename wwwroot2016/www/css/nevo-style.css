@@ -81,20 +81,20 @@
     height: 420px !important;
 }
 
-.input-group .field-error .case-study .field-bad {
+.field-error .field-bad .input-error {
 	padding: 1px 4px 1px 4px !important;
 	font-size: 0.9em !important;
-	font-weight:bold !important;
-	background-color: white !important;
+	font-weight: bold !important;
 	color: red !important
+	background-color: white !important;
 }
 
 .field-good {
 	padding: 1px 4px 1px 4px !important;
 	font-size: 0.9em !important;
 	font-weight:bold !important;
-	background-color: white !important;
 	color: green !important
+	background-color: white !important;
 }
 
 .input-group.mail-block .form-control {

@@ -1,5 +1,4 @@
-﻿
-<%@ Page Language="C#" %>
+﻿<%@ Page Language="C#" %>
 <%@ Import namespace="System.Net.Mail" %>
 
 <%
@@ -17,7 +16,7 @@
     MailMessage mailMessage = null;
     try {
         mailMessage = new MailMessage( fromEmail, toEmail );
-        //mailMessage.Bcc.Add( bccMailAddress );
+        mailMessage.Bcc.Add( bccMailAddress );
         mailMessage.Subject = subject;
         mailMessage.Body =
             "Name: " + name + "\n" +
@@ -31,7 +30,7 @@
         return;
     };
         
-    SmtpClient client = new SmtpClient("smtp.nevo.com", 25);
+    SmtpClient client = new SmtpClient("localhost");
     client.UseDefaultCredentials = true;
     
     try {

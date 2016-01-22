@@ -814,8 +814,9 @@
                                         <div class="input-group-addon"><span class="fa fa-pencil"></span></div>
                                         <textarea class="form-control message" name="u_text" placeholder="Message" 
                                             ng-model="message" rows="4" ng-change="typingMessage()"></textarea>
-                                        <input class="btn btn-primary inverse-btn" type="submit" value="Send" ng-click="sendMail()" ng-disabled="{{sendBusy}}"/>
-                                        <div class="field-error" ng-show="errorMessage">{{errorMessage}}</div>
+                                        <input class="btn btn-primary inverse-btn" type="submit" value="Send" ng-click="sendMail()" />
+                                        <div class="field-error" style="background-color: white; padding:1px 4px 1px 4px;"
+                                             ng-show="errorMessage">{{errorMessage}}</div>
                                     </div>
                                 </div>
                             </div>
