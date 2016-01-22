@@ -230,7 +230,7 @@ $(document).ready(function () {
     // share links open end
     
     //Reserve form validation
-    $(document).on("submit", "form#formReservation, form#formReservation-2", function() {
+    $(document).on("submit", "form#formSendFedback, form#formSendFedback-2", function() {
         if(!validation($(this).attr("id"))) {
             //here code if validation is successful
         }
@@ -556,9 +556,46 @@ function validation (formId) {
         .controller('controller', controller);
 
     controller.$inject = [
-        '$scope', '$filter', '$window'];
+        '$scope', '$filter', '$window' , '$http', '$timeout'];
 
-    function controller($scope, $filter, $window) {
-        $scope.nowYear = $filter('date')(new Date(),'yyyy');
+    function controller($scope, $filter, $window, $http, $timeout) {
+    	$scope.sendBusy = false;
+
+    	$scope.nowYear = $filter('date')(new Date(), 'yyyy');
+
+    	$scope.typingMessage = function () {
+    		$scope.errorMessage = undefined;
+    		$scope.goodMessage = $scope.errorMessage = undefined;
+    	}
+
+    	$scope.sendMail = function() {
+    		var from = $scope.emailAddress;
+    		var name = $scope.contactName;
+    		var phone = $scope.phoneNumber;
+    		var message = $scope.message;
+    		if (!message || message == "") {
+    			$scope.errorMessage = "Please provide a message!";
+    			return;
+    		}
+    		var url = "./sendMail.aspx" +
+				"?from=" + encodeURIComponent(from) +
+				"&name=" + encodeURIComponent(name) +
+				"&phone=" + encodeURIComponent(phone) +
+				"&message=" + encodeURIComponent(message);
+    		$scope.sendBusy = true;
+    		$http.get(url).then(function (response) {
+    			$scope.message = "";
+    			$scope.goodMessage = "Your message had been sent!";
+    		}, function (error) {
+    			if (error) console.log(error);
+    			$scope.badMessage = "Oh! Sorry but somthing bad happend and we could not send your message!"
+    		}).finally(function () {
+    			$timeout(function () {
+    				$scope.sendBusy = false;
+    				$scope.goodMessage = $scope.errorMessage = $scope.badMessage = undefined;
+    				$scope.message = "";
+    			}, 30000)
+    		});
+    	}
     }
 })();

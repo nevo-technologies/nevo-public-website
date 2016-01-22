@@ -733,8 +733,8 @@ a.prev:before {
     #reservation .modal-body .btn {
       margin-top: 10px; }
 
-form#formReservation,
-form#formReservation-2 {
+form#formSendFeedback,
+form#formSendFeedback-2 {
   text-align: center; }
 
 /*------------------------------------------------------------------
@@ -3491,8 +3491,8 @@ footer {
       margin-top: 0;
       margin-bottom: 0; }
 
-  form#formReservation .input-group,
-  form#formReservation-2 .input-group {
+  form#formSendFeedback .input-group,
+  form#formSendFeedback-2 .input-group {
     margin: 15px 0; }
 
   .main-menu.mobile-menu.mobile-menu-open .navbar-nav {
