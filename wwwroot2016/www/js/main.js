@@ -153,7 +153,11 @@ $(document).ready(function () {
                 $(".mobile-menu-btn").removeClass("active");
                 $("html, body").removeClass("no-scroll");
             }
-            
+
+            if (anchor.attr('href') == '#contact-us') {
+                $('#u_name').focus();
+            }
+
             e.preventDefault();
             return false;
         });
@@ -163,6 +167,10 @@ $(document).ready(function () {
             $('html, body').stop().animate({
                 scrollTop: $(anchor.attr('href')).offset().top
             }, 500);
+
+            if (anchor.attr('href') == '#contact-us') {
+                $('#u_name').focus();
+            }
 
             e.preventDefault();
             return false;
