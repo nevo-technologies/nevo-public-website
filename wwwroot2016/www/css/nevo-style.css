@@ -5,7 +5,7 @@
 
 .line-lg {
     margin-top: 10px !important;
-    margin-botton: 10px !important;
+    margin-bottom: 10px !important;
 }
 
 .line-lg span {
@@ -90,7 +90,7 @@
 	padding: 1px 4px 1px 4px !important;
 	font-size: 0.9em !important;
 	font-weight: bold !important;
-	color: red !important
+	color: red !important;
 	background-color: white !important;
 }
 
@@ -98,7 +98,7 @@
 	padding: 1px 4px 1px 4px !important;
 	font-size: 0.9em !important;
 	font-weight:bold !important;
-	color: green !important
+	color: green !important;
 	background-color: white !important;
 }
 

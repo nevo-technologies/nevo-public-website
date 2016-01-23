@@ -786,7 +786,8 @@
         
         this.nodes.$dots.each(function (index) {
             this.addEventListener('click', function (event) {
-                _self._parent.slideToPage(index);
+                var nextIndex = index + 1 >= _self._parent.$dots.length ? 0 : index + 1;
+                _self._parent.slideToPage(nextIndex);
                 _self.data.touchedClock = jQuery.now();
             }, false);
         });
@@ -1129,7 +1130,7 @@
 
             if (Math.abs(_self.data.mouseStart - _self.data.mouseX) / _self.data.width > _self.settings.SWIPE_SENSITIVITY) {
                 _self.data.direction = _self.data.mouseX > _self.data.mouseStart;
-                if (!_self.data.direction)
+                if (_self.data.direction)
                     _self._parent.next();
                 else
                     _self._parent.previous();

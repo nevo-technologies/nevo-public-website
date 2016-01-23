@@ -1,6 +1,7 @@
 ﻿
 // Smooth scroll
 uAgent = navigator.userAgent;
+isMobileDevice = (/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(uAgent.toLowerCase()));
 macOS = uAgent.match(/(iPad|iPhone|iPod|Macintosh)/g) ? true : false;
 mobileIE = uAgent.indexOf('IEMobile') !== -1;
 touch = false;
@@ -13,6 +14,7 @@ isAncientIe = uAgent.match(/msie 6/i);
 isIe = isAncientIe || isOlderIe || isNewerIe;
 latestKnownScrollY = $('html').scrollTop() || $('body').scrollTop();
 ticking = false;
+
 // Smooth scroll end
 
 $(document).ready(function () {
@@ -283,7 +285,7 @@ $(document).ready(function () {
         if($('.main-section.version-4 .main-section-slider').length > 0) {
             mainSlider = Resto.Slider.in($('.main-section.version-4 .main-section-slider'), {
                 loop: true,
-                autoplay: true,
+                autoplay: !isMobileDevice,
                 type: 'book-slider',
                 dots: false,
                 nextArrow: '.main-section.version-4 .next',
@@ -297,7 +299,7 @@ $(document).ready(function () {
                 type: 'accordion-slider',
                 dots: true,
                 loop: true,
-                autoplay: true,
+                autoplay: !isMobileDevice,
             });
             allSliders.push(clientSlider);
         }
@@ -306,7 +308,7 @@ $(document).ready(function () {
             dishesSlider4 = Resto.Slider.in($('.news-home.version-4 .news-list'), {
                 dots: false,
                 loop: true,
-                autoplay: true,
+                autoplay: !isMobileDevice,
                 type: 'book-slider',
                 nextArrow: '.news-home.version-4 .news-body .next',
                 previousArrow: '.news-home.version-4 .news-body .prev'
@@ -327,7 +329,7 @@ $(document).ready(function () {
             newsSlider = Resto.Slider.in($('.news-home.version-1 .news-list'), {
                 dots: true,
                 loop: true,
-                autoplay: true,
+                autoplay: !isMobileDevice,
                 type: 'book-slider',
                 nextArrow: '.news-home.version-1 .news-body .next',
                 previousArrow: '.news-home.version-1 .news-body .prev',
@@ -340,6 +342,8 @@ $(document).ready(function () {
     var sliderStopped = false;
     var sliderStoppedClock = 0;
     function stopSliders() {
+        if (isMobileDevice)
+            return;
         sliderStoppedClock = jQuery.now();
         if (!sliderStopped) {
             sliderStopped = true;
@@ -350,9 +354,9 @@ $(document).ready(function () {
         }
     }
 
-    var tid = setInterval(autoStartSliders, 2500);
+    var tid = !isMobileDevice ? setInterval(autoStartSliders, 2500) : null;
     function autoStartSliders() {
-        if (openedModal)
+        if (openedModal || isMobileDevice)
             return;
         var now = jQuery.now();
         var delayStart = 5000;
