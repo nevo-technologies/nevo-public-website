@@ -158,6 +158,16 @@ $(document).ready(function () {
             return false;
         });
 
+        $('.nav-scroll').bind("click", function (e) {
+            var anchor = $(this);
+            $('html, body').stop().animate({
+                scrollTop: $(anchor.attr('href')).offset().top
+            }, 500);
+
+            e.preventDefault();
+            return false;
+        });
+
         $("section, footer").waypoint(function (direction) {
             if (direction === "down") {
                 $(".navbar-nav a[href*=#" + this.element.id + "]").parent().addClass('active').siblings().removeClass('active');
