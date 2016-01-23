@@ -18,9 +18,14 @@
 }
 
 .close-x {
-    position: absolute;
-    right: 15px;
-    top: 5px;
+    font-size: 1.2em;
+    text-align: right;
+    cursor: pointer !important;
+    position: absolute !important;
+    right: 10px !important;
+    top: 5px !important;
+    width:50px;
+    height: 50px;
 }
 
 .modal {
