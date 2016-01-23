@@ -40,10 +40,12 @@ $(document).ready(function () {
 
     var footerHeight = $('footer').height();
     var map = null;
+    var marker = null;
 
     $(window).on('load', function () {
         // PRELOADER
         var preloader = $('#page-preloader');
+        var loadingDelay = 1000;
         setTimeout(function () {
             for (var i = 0; i <= 100; i++){
                 (function(i){
@@ -58,12 +60,12 @@ $(document).ready(function () {
              })(i);
             }
             preloader.removeClass('pageload-loading');
-        }, 2000);
+        }, loadingDelay);
         setTimeout(function () {
             preloader.css('z-index','-1');
             $('.main-section .animated').addClass('play-animation');
             $('.main-section').addClass('play-animation');
-        },2300);
+        }, loadingDelay + 300);
         // PRELOADER END
         Parallax.initialize();
     });
@@ -489,10 +491,16 @@ function initMap() {
         });
 
         // marker
-        var marker = new google.maps.Marker({
+        marker = new google.maps.Marker({
             map: map,
             position: {lat: 42.374366, lng: -71.119987},
             title: "Nevo's Headquarters"
+        });
+
+        marker.addListener('click', function() {
+            var url = "https://www.google.com/maps/place/26+Church+St,+Cambridge,+MA+02138"
+            var win = window.open(url, '_blank');
+            win.focus();
         });
     }
 
@@ -509,6 +517,10 @@ function initMap() {
     });
     $(document).on("click", "body", function () {
         $('.open-map').removeClass("_open-map");
+        window.setTimeout(function() {
+            if (map && marker)
+                map.panTo(marker.getPosition());
+        }, 500);
     });
 }
 
