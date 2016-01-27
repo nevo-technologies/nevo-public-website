@@ -408,16 +408,21 @@
     Slider.prototype.play = function () {
         var _self = this;
         _self.data.stopped = false;
-        this.data.timer = setInterval(function(){
-            if (!_self.data.stopped)
-                _self.next();
-        }, this.settings.time);
+        if (!_self.data.timer) {
+            _self.data.timer = setInterval(function () {
+                if (!_self.data.stopped)
+                    _self.next();
+            }, this.settings.time);
+        }
     }
 
     Slider.prototype.stop = function () {
         var _self = this;
-        clearInterval(this.data.timer);
+        clearInterval(_self.data.timer);
+        _self.data.timer = null;
         _self.data.stopped = true;
+        _self.data.stopClock = jQuery.now();
+        //console.log('slider stopped!');
     }
 
     Slider.prototype.initEvent = function () {
@@ -439,10 +444,13 @@
         _sliderScene.addEventListener('mouseenter', function(){
             _self.stop();
         });
-        _sliderScene.addEventListener('mouseleave', function(){
+        _sliderScene.addEventListener('mousemove', function(){
+            _self.stop();
+        });
+        /**_sliderScene.addEventListener('mouseleave', function(){
             if(_self.settings.autoplay && !_self.data.stopped)
                 _self.play();
-        });
+        }); **/
     }
 
     // extend helper class
@@ -859,6 +867,7 @@
             this.nodes.$dots.each(function (index) {
                 this.addEventListener('click', function (event) {
                     _self._parent.slideTo(index);
+                    _self.data.touchedClock = jQuery.now();
                 }, false);
             });
         }
@@ -1015,8 +1024,6 @@
             _self._parent.setSlides(_self.nodes.$next);
         }});
         TweenMax.to(this.nodes.$current, .7, {opacity: 0, x: '-40%', ease: Power2.easeOut, clearProps: "transform, opacity"});
-
-        _self.data.touchedClock = jQuery.now();
     }
     
     AccordionSlider.prototype.previous = function () {
@@ -1028,8 +1035,6 @@
         }});
         
         TweenMax.to(this.nodes.$current, .7, {opacity: 0, x: '40%', ease: Power2.easeOut, clearProps: "transform, opacity"});
-
-        _self.data.touchedClock = jQuery.now();
     }
 
     AccordionSlider.prototype.slideTo = function ($to, $current) {
@@ -1133,6 +1138,7 @@
                     _self._parent.next();
                 else
                     _self._parent.previous();
+                _self.data.touchedClock = jQuery.now();
                 return;
             }
         }, false);

@@ -340,19 +340,11 @@ $(document).ready(function () {
     }
     //Initialize all sliders end
 
-    var sliderStopped = false;
-    var sliderStoppedClock = 0;
     function stopSliders() {
-        if (isMobileDevice)
-            return;
-        sliderStoppedClock = jQuery.now();
-        if (!sliderStopped) {
-            sliderStopped = true;
-            _.forEach(allSliders, function (slider) {
-                slider.stop();
-            });
-            //console.log('stopped sliders!');
-        }
+        _.forEach(allSliders, function (slider) {
+            slider.stop();
+        });
+        //console.log('stopped sliders!');
     }
 
     var tid = !isMobileDevice ? setInterval(autoStartSliders, 2500) : null;
@@ -370,15 +362,14 @@ $(document).ready(function () {
                 stopSliders();
             }
         });
-        if (!stoppingSliders && sliderStopped && sliderStoppedClock > 0 && now - sliderStoppedClock > delayStart) {
-            sliderStopped = false;
-            sliderStoppedClock = 0;
-            _.forEach(allSliders, function (slider) {
-                if (!slider.data.touchedClock || now - slider.data.touchedClock > delayStart)
-                    slider.play();
-            });
-            //console.log('started sliders!');
-        }
+        _.forEach(allSliders, function (slider) {
+            var dontStart1 = slider.data.touchedClock > 0 && now - slider.data.touchedClock < delayStart;
+            var dontStart2 = slider.data.stoppedClock > 0 && now - slider.data.stoppedClock < delayStart;
+            if (!dontStart1 && !dontStart2) {
+                slider.play();
+                //console.log('started slider!');
+            }
+        });
     }
 
     // galleru initialize
