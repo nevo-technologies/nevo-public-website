@@ -319,10 +319,11 @@ $(document).ready(function () {
         if($('.team-carousel').length > 0) {
             teamSlider = Resto.Slider.in($('.team-carousel'), {
                 dots: true,
+                autoplay: false, // no auto play for team
                 type: 'inline-multi-slider',
                 pagePagination: true
             });
-            allSliders.push(teamSlider);
+            //allSliders.push(teamSlider);
         }
         
         if($('.news-home.version-1 .news-list').length > 0) {
