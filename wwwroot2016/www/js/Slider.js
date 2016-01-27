@@ -786,8 +786,7 @@
         
         this.nodes.$dots.each(function (index) {
             this.addEventListener('click', function (event) {
-                var nextIndex = index + 1 >= _self._parent.$dots.length ? 0 : index + 1;
-                _self._parent.slideToPage(nextIndex);
+                _self._parent.slideToPage(index);
                 _self.data.touchedClock = jQuery.now();
             }, false);
         });
