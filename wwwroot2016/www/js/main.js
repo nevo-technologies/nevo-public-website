@@ -744,3 +744,28 @@ function validation (formId) {
         }
     }
 })();
+
+(function() {
+    'use strict';
+    angular.module("app")
+        .directive('caseStudy', caseStudy);
+
+    function caseStudy() {
+        return {
+            templateUrl: './templates/caseStudy.html',
+            restrict: 'E',
+            replace: true,
+            transclude: true,
+            scope: {
+                caseId: '@',
+                imageSrc: '@',
+                imageAlt: '@',
+                title: '@',
+                website: '@',
+                name: '@',
+                industry: '@',
+                text: '@'
+            },
+        };
+    };
+})();

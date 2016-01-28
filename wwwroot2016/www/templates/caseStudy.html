@@ -1,0 +1,31 @@
+<div class="customers-lazy">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"
+             style="vertical-align: middle; text-align: center; padding-top: 20px">
+            <img style='max-width:200px'
+                 ng-src='{{"./images/" + imageSrc}}' alt="{{imageAlt}} "/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="description-block" style="padding: 25px; text-align: center">
+                <h5>
+                    {{title}}
+                </h5>
+                <span class="post">
+                    <a href="{{website}}" target="_blank">
+                        {{name}}
+                    </a>,
+                    <br>{{industry}}
+                    <span class="line-lg"></span>
+                </span>
+                <p style="text-align: left">
+                    {{text}}...
+                </p>
+                <p style="text-align: center; margin-top: 10px">
+                    <a id="{{caseId}}" href class="btn btn-success btn-sm open-modal">Read more</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
