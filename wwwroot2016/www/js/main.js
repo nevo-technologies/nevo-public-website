@@ -733,7 +733,7 @@ function validation (formId) {
             var teamCarousel = document.getElementsByClassName("team-carousel");
             var width = teamCarousel[0].clientWidth - 10;
 
-            var memberWidth = width > 1020 ? 200 : 285;
+            var memberWidth = width > 1100 ? 215 : 285;
             var nTeamMembers = Math.floor(width / memberWidth);
             var teamMemberWidth = Math.floor(width / nTeamMembers);
             $scope.teamMemberWidth = teamMemberWidth + 'px';
