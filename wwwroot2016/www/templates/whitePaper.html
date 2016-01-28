@@ -1,0 +1,43 @@
+<div>
+    <div class="hidden-xs hidden-sm">
+        <div class="row">
+            <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5" style="text-align: left">
+                <img ng-src="{{'./images/' + imageSrc}}" alt="{{imageAlt}}" width="100%" />
+            </div>
+            <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5" style="text-align: left">
+                <h5>{{title}}</h5>
+                <p class="line-lg"><span></span></p>
+                <p class="news-text-block-text">
+                <p>{{text}}
+                    <a target="_blank"
+                       href="./our-knowledge/whitepapers/{{pdfFile}}">
+                        <br/><img src="./images/pdf-icon.png" alt="pdf" height="25px">
+                        <span style="position: relative; top:5px">Read more</span>
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="hidden-md hidden-lg">
+        <div class="row ">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="text-align: left">
+                <img ng-src="{{'./images/' + imageSrc}}" alt="{{imageAlt}}" width="100%"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="text-align: left">
+                <h5>{{title}}</h5>
+                <p class="line-lg"><span></span></p>
+                <p class="news-text-block-text">
+                <p><span>{{text}}</span><span>...</span>
+                    <a target="_blank"
+                       href="./our-knowledge/whitepapers/{{pdfFile}}">
+                        <br/><img src="./images/pdf-icon.png" alt="pdf" height="25px">
+                        <span style="position: relative; top:5px">Read more</span>
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
