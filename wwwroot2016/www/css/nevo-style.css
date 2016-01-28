@@ -1,6 +1,11 @@
-.team-body {
-    min-width: 250px !important;
-    height: 380px;
+.section-description {
+    margin-bottom: 5px !important;
+    margin-bottom: 2px !important;
+}
+
+.about {
+    padding-left: 5px !important;
+    padding-right: 5px !important;
 }
 
 .line-lg {
@@ -115,4 +120,9 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
 
 .gmnoprint div {
     background:none !important;
+}
+
+.mobile-menu-btn {
+    padding-right: 0px !important;
+    margin-right: 0px !important;
 }

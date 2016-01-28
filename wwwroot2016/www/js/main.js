@@ -678,47 +678,69 @@ function validation (formId) {
         '$scope', '$filter', '$window' , '$http', '$timeout'];
 
     function controller($scope, $filter, $window, $http, $timeout) {
-    	$scope.sendBusy = false;
 
-    	$scope.nowYear = $filter('date')(new Date(), 'yyyy');
+        activate();
 
-    	$scope.typingMessage = function () {
-    		//$scope.errorMessage = undefined;
-    		//$scope.goodMessage = $scope.errorMessage = undefined;
-    	}
+        function activate() {
+            _initDates();
+            _initTeamMembers();
+            _initContactSend();
+        }
 
-    	$scope.sendMail = function() {
-    		var from = $scope.emailAddress;
-    		var name = $scope.contactName;
-    		var phone = $scope.phoneNumber;
-    		var message = $scope.message;
-    		if (!message || message == "") {
-    			$scope.errorMessage = "Please provide a message!";
-    			return;
-    		}
-    		var url = "./sendMail.aspx" +
-				"?from=" + encodeURIComponent(from) +
-				"&name=" + encodeURIComponent(name) +
-				"&phone=" + encodeURIComponent(phone) +
-				"&message=" + encodeURIComponent(message);
-    		$scope.sendBusy = true;
-    		$http.get(url).then(function (response) {
-    			$scope.message = "";
-    		    var badResponse = !response || !response.data || response.data.substring(0,1) == '<';
-    		    if (badResponse)
-    		        $scope.badMessage = "Unable to send your message!";
-    		    else
-        			$scope.goodMessage = "Thank You! Your message was sent successfully!";
-    		}, function (error) {
-    			if (error) console.log(error);
-    			$scope.badMessage = "Oh! Sorry but something bad happened and we could not send your message!"
-    		}).finally(function () {
-    			$timeout(function () {
-    				$scope.sendBusy = false;
-    				$scope.goodMessage = $scope.errorMessage = $scope.badMessage = undefined;
-    				$scope.message = "";
-    			}, 30000)
-    		});
-    	}
+        function _initContactSend() {
+            $scope.sendBusy = false;
+            $scope.sendMail = function() {
+                var from = $scope.emailAddress;
+                var name = $scope.contactName;
+                var phone = $scope.phoneNumber;
+                var message = $scope.message;
+                if (!message || message == "") {
+                    $scope.errorMessage = "Please provide a message!";
+                    return;
+                }
+                var url = "./sendMail.aspx" +
+                    "?from=" + encodeURIComponent(from) +
+                    "&name=" + encodeURIComponent(name) +
+                    "&phone=" + encodeURIComponent(phone) +
+                    "&message=" + encodeURIComponent(message);
+                $scope.sendBusy = true;
+                $http.get(url).then(function (response) {
+                    $scope.message = "";
+                    var badResponse = !response || !response.data || response.data.substring(0,1) == '<';
+                    if (badResponse)
+                        $scope.badMessage = "Unable to send your message!";
+                    else
+                        $scope.goodMessage = "Thank You! Your message was sent successfully!";
+                }, function (error) {
+                    if (error) console.log(error);
+                    $scope.badMessage = "Oh! Sorry but something bad happened and we could not send your message!"
+                }).finally(function () {
+                    $timeout(function () {
+                        $scope.sendBusy = false;
+                        $scope.goodMessage = $scope.errorMessage = $scope.badMessage = undefined;
+                        $scope.message = "";
+                    }, 30000)
+                });
+            }
+        }
+
+        function _initDates() {
+            $scope.nowYear = $filter('date')(new Date(), 'yyyy');
+        }
+
+        function _initTeamMembers() {
+
+            var teamCarousel = document.getElementsByClassName("team-carousel");
+            var width = teamCarousel[0].clientWidth - 10;
+
+            var memberWidth = width > 1020 ? 200 : 285;
+            var nTeamMembers = Math.floor(width / memberWidth);
+            var teamMemberWidth = Math.floor(width / nTeamMembers);
+            $scope.teamMemberWidth = teamMemberWidth + 'px';
+            var padding = Math.floor((width - (nTeamMembers * 285)) / 2);
+            $scope.teamMemberPadding = '0px ' + padding + 'px';
+            $scope.teamMemberHeight = width <= 320 ? '375px' : '390px';
+            $scope.memberWidth = memberWidth + 'px';
+        }
     }
 })();
