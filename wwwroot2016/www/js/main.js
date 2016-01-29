@@ -294,8 +294,18 @@ $(document).ready(function () {
             allSliders.push(mainSlider);
         }
         
-        if($('.customers-carousel').length > 0) {
-            clientSlider = Resto.Slider.in($('.customers-carousel'), {
+        if($('#white-papers-carousel').length > 0) {
+            papersSlider = Resto.Slider.in($('#white-papers-carousel'), {
+                type: 'accordion-slider',
+                dots: true,
+                loop: true,
+                autoplay: !isMobileDevice,
+            });
+            allSliders.push(papersSlider);
+        }
+
+        if($('#case-studies-carousel').length > 0) {
+            clientSlider = Resto.Slider.in($('#case-studies-carousel'), {
                 type: 'accordion-slider',
                 dots: true,
                 loop: true,
@@ -303,6 +313,7 @@ $(document).ready(function () {
             });
             allSliders.push(clientSlider);
         }
+
 
         if($('.news-home.version-4 .news-list').length > 0) {
             dishesSlider4 = Resto.Slider.in($('.news-home.version-4 .news-list'), {
@@ -769,3 +780,28 @@ function validation (formId) {
         };
     };
 })();
+
+(function() {
+    'use strict';
+    angular.module("app")
+        .directive('whitePaper', whitePaper);
+
+    function whitePaper() {
+        return {
+            templateUrl: './templates/whitePaper.html',
+            restrict: 'E',
+            replace: true,
+            transclude: true,
+            scope: {
+                pdfFile: '@',
+                imageSrc: '@',
+                imageAlt: '@',
+                title: '@',
+                text: '@'
+            },
+            link: function(scope, element) {
+            }
+        };
+    };
+})();
+

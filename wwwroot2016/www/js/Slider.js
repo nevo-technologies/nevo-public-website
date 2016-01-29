@@ -1023,7 +1023,7 @@
             TweenMax.to(_self.nodes.$next, .1, {scale: 1, clearProps: "transform"});
             _self._parent.setSlides(_self.nodes.$next);
         }});
-        TweenMax.to(this.nodes.$current, .7, {opacity: 0, x: '-40%', ease: Power2.easeOut, clearProps: "transform, opacity"});
+        TweenMax.to(_self.nodes.$current, .7, {opacity: 0, x: '-40%', ease: Power2.easeOut, clearProps: "transform, opacity"});
     }
     
     AccordionSlider.prototype.previous = function () {
@@ -1034,7 +1034,7 @@
             _self._parent.setSlides(_self.nodes.$previous);
         }});
         
-        TweenMax.to(this.nodes.$current, .7, {opacity: 0, x: '40%', ease: Power2.easeOut, clearProps: "transform, opacity"});
+        TweenMax.to(_self.nodes.$current, .7, {opacity: 0, x: '40%', ease: Power2.easeOut, clearProps: "transform, opacity"});
     }
 
     AccordionSlider.prototype.slideTo = function ($to, $current) {

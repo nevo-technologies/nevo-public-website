@@ -126,3 +126,7 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
     padding-right: 0px !important;
     margin-right: 0px !important;
 }
+
+.dark-gray {
+    color: #303030 !important;
+}
