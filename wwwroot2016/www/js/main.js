@@ -1,7 +1,7 @@
 ﻿
 // Smooth scroll
 uAgent = navigator.userAgent;
-isMobileDevice = (/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(uAgent.toLowerCase()));
+isMobileDevice = true; // (/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(uAgent.toLowerCase()));
 macOS = uAgent.match(/(iPad|iPhone|iPod|Macintosh)/g) ? true : false;
 mobileIE = uAgent.indexOf('IEMobile') !== -1;
 touch = false;
