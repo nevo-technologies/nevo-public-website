@@ -299,6 +299,7 @@ $(document).ready(function () {
                 type: 'accordion-slider',
                 dots: true,
                 loop: true,
+                dotsClass: "dark-slider-dots",
                 autoplay: !isMobileDevice,
             });
             allSliders.push(papersSlider);
@@ -740,10 +741,8 @@ function validation (formId) {
         }
 
         function _initTeamMembers() {
-
             var teamCarousel = document.getElementsByClassName("team-carousel");
             var width = teamCarousel[0].clientWidth - 10;
-
             var memberWidth = width > 1100 ? 215 : 285;
             var nTeamMembers = Math.floor(width / memberWidth);
             var teamMemberWidth = Math.floor(width / nTeamMembers);

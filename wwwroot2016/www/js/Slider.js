@@ -783,10 +783,11 @@
             _self = this;
         
         ul.className = this.settings.dotsClass;
-        pages.forEach(function(item, i, pages) {
-            var li = document.createElement("li");
-            ul.appendChild(li);
-        });
+        if (pages.length > 1)
+            pages.forEach(function(item, i, pages) {
+                var li = document.createElement("li");
+                ul.appendChild(li);
+            });
         
         this.nodes.$slider.parent().append(ul);
         this.nodes.$dots = $(ul).find("li");
