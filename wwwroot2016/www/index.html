@@ -51,14 +51,14 @@
                     	<span></span>
                     </span>
             <ul class="nav navbar-nav">
-                <li><a href="#main-section">Home</a></li>
-                <li><a href="#about-us">About</a></li>
-                <li><a href="#team">Our people</a></li>
-                <li><a href="#our-knowledge">Our knowledge</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#case-studies">Case studies</a></li>
-                <li><a href="#jobs">Jobs</a></li>
-                <li><a href="#contact-us">Contact us</a></li>
+                <li><a ng-click="track('nav','home')" href="#main-section">Home</a></li>
+                <li><a ng-click="track('nav','about')" href="#about-us">About</a></li>
+                <li><a ng-click="track('nav','our-people')" href="#team">Our people</a></li>
+                <li><a ng-click="track('nav','knowledge')" href="#our-knowledge">Our knowledge</a></li>
+                <li><a ng-click="track('nav','services')" href="#services">Services</a></li>
+                <li><a ng-click="track('nav','case-studies')" href="#case-studies">Case studies</a></li>
+                <li><a ng-click="track('nav','jobs')" href="#jobs">Jobs</a></li>
+                <li><a ng-click="track('nav','contact-us')" href="#contact-us">Contact us</a></li>
             </ul>
         </div>
     </nav>
@@ -127,7 +127,7 @@
                                 results. The benefits for our clients are simple: lower total cost, reduced time to
                                 completion, and predictable results.
                             </p>
-                            <div class="readmore">
+                            <div class="readmore" ng-click="track('readmore','about-us')">
                                 <h5>Our story</h5>
                                 <p class="line-lg"><span></span></p>
                                 <p>
@@ -194,7 +194,8 @@
                             </p>
                         </div>
                         <p class="text-center" style="position: absolute; bottom: 10px; width:100%; z-index: 1000">
-                            <a id="ken" href class="btn btn-success btn-sm open-modal">Read more</a>
+                            <a id="ken" ng-click="track('readmore','ken')"
+                               href class="btn btn-success btn-sm open-modal">Read more</a>
                         </p>
                     </div>
                 </article>
@@ -213,7 +214,8 @@
                             </p>
                         </div>
                         <p class="text-center" style="position: absolute; bottom: 10px; width:100%; z-index: 1000">
-                            <a id="peter" href class="btn btn-success btn-sm open-modal">Read more</a>
+                            <a id="peter" ng-click="track('readmore','peter')"
+                               href class="btn btn-success btn-sm open-modal">Read more</a>
                         </p>
                     </div>
                 </article>
@@ -232,7 +234,8 @@
                             </p>
                         </div>
                         <p class="text-center" style="position: absolute; bottom: 10px; width:100%; z-index: 1000">
-                            <a id="ethan" href class="btn btn-success btn-sm open-modal">Read more</a>
+                            <a id="ethan" ng-click="track('readmore','ethan')"
+                               href class="btn btn-success btn-sm open-modal">Read more</a>
                         </p>
                     </div>
                 </article>
@@ -251,7 +254,8 @@
                             </p>
                         </div>
                         <p class="text-center" style="position: absolute; bottom: 10px; width:100%; z-index: 1000">
-                            <a id="clarke" href class="btn btn-success btn-sm open-modal">Read more</a>
+                            <a id="clarke" ng-click="track('readmore','john')"
+                               href class="btn btn-success btn-sm open-modal">Read more</a>
                         </p>
                     </div>
                 </article>
@@ -270,7 +274,8 @@
                             </p>
                         </div>
                         <p class="text-center" style="position: absolute; bottom: 10px; width:100%; z-index: 1000">
-                            <a id="goyette" href class="btn btn-success btn-sm open-modal">Read more</a>
+                            <a id="goyette" ng-click="track('readmore','dan')"
+                               href class="btn btn-success btn-sm open-modal">Read more</a>
                         </p>
                     </div>
                 </article>
@@ -340,7 +345,7 @@
                                 <p>
                                     Nevo technologists have practical experience in the following technologies:
                                 </p>
-                                <ul class="readmore">
+                                <ul class="readmore" ng-click="track('readmore', 'our-knowledge')">
                                     <li>Agile Methodology (SCRUM)
                                     </li>
                                     <li>Angular
@@ -566,6 +571,7 @@
                         developers to work with your team on-site or remotely.
                     </p>
                 </div>
+                <!-- note: hidden for small device and showing below on a new row -->
                 <div class="col-xs-12 col-sm-6 col-md-3 info-block-col hidden-sm">
                     <div class="info-block-img">
                         <img src="./images/services3.jpg" alt="Nevo Technologies"/>
@@ -588,6 +594,7 @@
                 </div>
             </div>
         </div>
+        <!-- note: these are only showinf on a small device on a new row (otherwise supported above)-->
         <div class="row visible-sm margin-top">
             <div class="col-xs-12 col-sm-6 col-md-3 info-block-col">
                 <div class="info-block-img">
@@ -610,6 +617,7 @@
                 </p>
             </div>
         </div>
+        <!-- end small device -->
         <div class="row " style="margin-top: 20px">
             <p class="line-lg"><span></span></p>
             <p class="section-description summary text-center dark-gray">
@@ -759,7 +767,7 @@
                                 Clients come back because we do great work, and we're great to work with.
                                 Great developers come to Nevo and stay because Nevo really is a special place to work.
                             </p>
-                            <div class="readmore">
+                            <div class="readmore" ng-click="track('readmore', 'jobs')">
                                 <p>
                                     We have worked hard for nearly two decades to make this happen.<br/>
                                     Here's how:
@@ -824,6 +832,7 @@
                             </div>
                             <div class="text-center">
                                 <a href="mailto:jobs@nevo.com?subject=Resume"
+                                   ng-click="track('send', 'resume')"
                                    class="btn btn-success btn-sm">Submit resume</a>
                             </div>
                         </div>
@@ -873,7 +882,7 @@
                                         <textarea class="form-control message" name="u_text" placeholder="Message"
                                                   ng-model="message" rows="4" ng-change="typingMessage()"></textarea>
                                 <input class="btn btn-primary inverse-btn" type="submit" value="Send"
-                                       ng-click="sendMail()"/>
+                                       ng-click="sendMail(); track('send', 'message')"/>
                                 <div class="field-error" style="background-color: white; padding:1px 4px 1px 4px;"
                                      ng-show="errorMessage">{{errorMessage}}
                                 </div>

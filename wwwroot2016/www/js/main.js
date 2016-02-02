@@ -697,6 +697,13 @@ function validation (formId) {
             _initDates();
             _initTeamMembers();
             _initContactSend();
+            _initTracking();
+        }
+
+        function _initTracking() {
+            $scope.track = function(type, name) {
+                _gaq.push(['_trackEvent', type, name]);
+            };
         }
 
         function _initContactSend() {
@@ -776,6 +783,11 @@ function validation (formId) {
                 industry: '@',
                 text: '@'
             },
+            link: function(scope, element) {
+                scope.track = function(type, name) {
+                    _gaq.push(['_trackEvent', type, name]);
+                };
+            }
         };
     };
 })();
@@ -799,6 +811,9 @@ function validation (formId) {
                 text: '@'
             },
             link: function(scope, element) {
+                scope.track = function(type, name) {
+                    _gaq.push(['_trackEvent', type, name]);
+                };
             }
         };
     };

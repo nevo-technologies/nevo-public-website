@@ -23,7 +23,9 @@
                     {{text}}...
                 </p>
                 <p style="text-align: center; margin-top: 10px">
-                    <a id="{{caseId}}" href class="btn btn-success btn-sm open-modal">Read more</a>
+                    <a id="{{caseId}}"
+                       ng-click="track('case-study', caseId)"
+                       href class="btn btn-success btn-sm open-modal">Read more</a>
                 </p>
             </div>
         </div>

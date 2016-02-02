@@ -29,7 +29,8 @@
                 <p class="line-lg"><span></span></p>
                 <div class="news-text-block-text" style="z-index: 1000">
                     <p>{{text}}
-                        <a target="_blank"
+                        <a
+                           ng-click="track('whitepaper', title)"
                            href="./our-knowledge/whitepapers/{{pdfFile}}">
                             <br/><img src="./images/pdf-icon.png" alt="pdf" height="25px">
                             <span style="position: relative; top:5px">Read more</span>
