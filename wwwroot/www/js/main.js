@@ -687,9 +687,9 @@ function validation (formId) {
         .controller('controller', controller);
 
     controller.$inject = [
-        '$scope', '$filter', '$window' , '$http', '$timeout'];
+        '$scope', '$filter', '$window' , '$http', '$timeout', '$log'];
 
-    function controller($scope, $filter, $window, $http, $timeout) {
+    function controller($scope, $filter, $window, $http, $timeout, $log) {
 
         activate();
 
@@ -698,6 +698,16 @@ function validation (formId) {
             _initTeamMembers();
             _initContactSend();
             _initTracking();
+            _initVersion();
+        }
+
+        function _initVersion() {
+            $http.get('./includes/version.txt').then(function(response) {
+                $scope.version = response && response.data ? response.data : '??';
+            }, function(error) {
+                $log.error('failed to get version!')
+                $scope.version = '??';
+            });
         }
 
         function _initTracking() {
