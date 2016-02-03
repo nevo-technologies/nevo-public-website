@@ -1,0 +1,94 @@
+﻿/*------------------------------------------------------------------
+    buttons styles
+-------------------------------------------------------------------*/
+
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
+    outline:none !important;
+}
+
+.btn {
+    text-transform: uppercase;
+    @include transition(.5s);
+}
+.btn-primary {
+    display: inline-block;
+    width: auto;
+    margin: 0px auto;
+    padding: 13px 20px;
+    overflow: hidden;
+    font: 400 1em "Lato",sans-serif;
+    color: $whiteColor;
+    text-transform: uppercase;
+    border: 1px solid $whiteColor;
+    border-radius: 3px;
+    background:transparent;
+    cursor:pointer;
+    &.btn-sm {
+        padding: 8px 20px;
+    }
+    &:hover,
+    &:active,
+    &:active:hover,
+    &:active:focus,
+    &:focus {
+        outline:none;
+        color: $defaultThemeColor;
+        border-color:$whiteColor;
+        background-color:$whiteColor;
+        
+    }
+    &.inverse-btn {
+        color: $defaultThemeColor;
+        background-color:$whiteColor;
+        &:hover,
+        &:active,
+        &:active:hover,
+        &:active:focus,
+        &:focus {
+            color: $whiteColor;
+            background-color: transparent;
+        } 
+    }
+}
+
+.btn-success {
+    display:inline-block;
+    padding: 13px 20px;
+    font: 400 1em 'Lato', sans-serif;
+    color: $defaultThemeColor;
+    background-color: transparent;
+    border-radius: 3px;
+    border: 1px solid $defaultThemeColor;
+    cursor: pointer;
+    &.btn-sm {
+        padding: 8px 20px;
+    }
+    &:hover,
+    &:active,
+    &:active:hover,
+    &:active:focus,
+    &:focus {
+        outline:none;
+        background-color: $defaultThemeColor;
+        border-color: $defaultThemeColor;
+        color: $whiteColor;
+    }
+
+    &.inverse-btn {
+        color: $whiteColor;
+        background-color: $defaultThemeColor;
+        &:hover,
+        &:active,
+        &:active:hover,
+        &:active:focus,
+        &:focus {
+            color: $defaultThemeColor;
+            background-color: transparent;
+        } 
+    }
+}

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+        xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+    <url>
+        <loc>http://nevo.com</loc>
+        <changefreq>weekly</changefreq>
+    </url>
+    <url>
+        <loc>http://www.nevo.com/tel:+16173546386</loc>
+        <changefreq>weekly</changefreq>
+    </url>
+    <url>
+        <loc>http://nevo.com/whitepapers/High%20Performance%20Software%20Teams.pdf</loc>
+        <changefreq>weekly</changefreq>
+    </url>
+    <url>
+        <loc>http://nevo.com/whitepapers/RequirementsProcess.pdf</loc>
+        <changefreq>weekly</changefreq>
+    </url>
+    <url>
+        <loc>http://nevo.com/whitepapers/BuildVsBuy.pdf</loc>
+        <changefreq>weekly</changefreq>
+    </url>
+    <url>
+        <loc>http://nevo.com/whitepapers/NevoVendorSelection.pdf</loc>
+        <changefreq>weekly</changefreq>
+    </url>
+    <url>
+        <loc>http://nevo.com/whitepapers/Building%20a%20High%20Performance%20Team.pdf</loc>
+        <changefreq>weekly</changefreq>
+    </url>
+</urlset>

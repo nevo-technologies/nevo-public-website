@@ -1,0 +1,97 @@
+﻿
+/*------------------------------------------------------------------
+    FORMS styles
+-------------------------------------------------------------------*/
+
+.input-group {
+    position:relative;
+    height: 45px;
+    width:100%;
+    margin-bottom:30px;
+    input,
+    textarea{
+        line-height:45px;
+        font-weight: 300;
+        resize: none;
+        -webkit-appearance: none;
+        box-shadow:none;
+        &::-webkit-input-placeholder {color: $lightGrayColor;}
+        &:-moz-placeholder {color: $lightGrayColor;}
+        &::-moz-placeholder {color: $lightGrayColor;}
+        &:-ms-input-placeholder {color: $lightGrayColor;}
+
+        &:focus::-webkit-input-placeholder {opacity: .4;}
+        &:focus::-moz-placeholder          {opacity: .4;}
+        &:focus:-moz-placeholder           {opacity: .4;}
+        &:focus:-ms-input-placeholder      {opacity: .4;}
+    }
+
+    // valid error styles
+    .field-error {
+        border: none !important;
+        color: red !important;
+        font-size: 0.8em !important;
+        font-weight: 300;
+        left: 0;
+        padding: 2px 0;
+        position: absolute;
+        top: 100%;
+        line-height: 1em;
+    }
+
+    //valid success styles
+    .field-success {
+        border: none !important;
+        color: green !important;
+        font-size: 0.8em !important;
+        font-weight: 300;
+        left: 0;
+        padding: 2px 0;
+        position: absolute;
+        top: 100%;
+        line-height: 1em;
+    }
+    .input-group-addon {
+        position:absolute;
+        top:0;
+        left:0;
+        z-index:5;
+        width:45px;
+        height:45px;
+        padding:0;
+        border: none;
+        background-color: transparent;
+        .fa {
+            display: block;
+            width:45px;
+            line-height:45px;
+            font-size: 1.2em;
+            color: $lightGrayColor;
+        }
+        &.focus {
+            .fa {
+                color:$defaultThemeColor;
+            }
+        }
+    }
+    .form-control {
+        height:45px;
+        line-height:45px;
+        padding-left:45px;
+        border-radius:0px !important;
+        background-color: transparent;
+        &:focus {
+            border-color: $defaultThemeColor;
+            box-shadow:none;
+            color: $defaultThemeColor;
+            outline: 0;
+        }
+    }
+    &.mail-block {
+        .form-control {
+            height:165px;
+            padding-top: 13px;
+            line-height:1.4em;
+        }
+    }
+}
