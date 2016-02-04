@@ -861,19 +861,22 @@
                             <div class="input-group">
                                 <div class="input-group-addon"><span class="fa fa-user"></span></div>
                                 <input id="u_name" type="text" name="u_name" placeholder="Name"
-                                       class="form-control requiredField name" value=""
+                                       class="form-control name" value=""
                                        ng-model="contactName"/>
+                                <field-error message="{{nameMessage}}"></field-error>
                             </div>
                             <div class="input-group">
                                 <div class="input-group-addon"><span class="fa fa-phone"></span></div>
                                 <input type="text" name="u_phone" placeholder="Phone"
-                                       class="form-control requiredField phone" ng-model="phoneNumber" value=""/>
+                                       class="form-control phone" ng-model="phoneNumber" value=""/>
+                                <field-error message="{{phoneMessage}}"></field-error>
                             </div>
                             <div class="input-group">
                                 <div class="input-group-addon"><span class="fa fa-at"></span></div>
-                                <input type="email" name="u_mail" placeholder="Enter email"
-                                       class="form-control requiredField email" value=""
+                                <input type="text" name="u_mail" placeholder="Enter email"
+                                       class="form-control email" value=""
                                        ng-model="emailAddress"/>
+                                <field-error message="{{emailMessage}}"></field-error>
                             </div>
                         </div>
                         <div>
@@ -882,10 +885,8 @@
                                         <textarea class="form-control message" name="u_text" placeholder="Message"
                                                   ng-model="message" rows="4" ng-change="typingMessage()"></textarea>
                                 <input class="btn btn-primary inverse-btn" type="submit" value="Send"
-                                       ng-click="sendMail(); track('send', 'message')"/>
-                                <div class="field-error" style="background-color: white; padding:1px 4px 1px 4px;"
-                                     ng-show="errorMessage">{{errorMessage}}
-                                </div>
+                                       ng-click="sendMail()" />
+                                <field-error message="{{errorMessage}}"></field-error>
                             </div>
                         </div>
                     </div>

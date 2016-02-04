@@ -252,30 +252,29 @@ $(document).ready(function () {
     // share links open end
     
     //Reserve form validation
-    $(document).on("submit", "form#formSendFeedback, form#formSendFeedback-2", function() {
+    /**$(document).on("submit", "form#formSendFeedback, form#formSendFeedback-2", function() {
         if(!validation($(this).attr("id"))) {
             //here code if validation is successful
         }
         return false;
-    });
+    });**/
     //End reserve form validation
     
     //Comment form validation
-    $(document).on("submit", "form#formComment", function() {
+    /**$(document).on("submit", "form#formComment", function() {
         if(!validation($(this).attr("id"))) {
             //here your code
         }
         return false;
-    });
+    }); **/
     //End comment form validation
     //Reserve form validation
-    $(document).on("submit", "form#subscribe-form", function() {
+    /** $(document).on("submit", "form#subscribe-form", function() {
         if(!validation($(this).attr("id"))) {
             $(this).find('input[type="email"]').parent().append('<strong class="field-success">Success</strong>');
         }
         return false;
-    });
-
+    }); **/
     //End reserve form validation
 
     var allSliders = [];
@@ -625,6 +624,8 @@ function initMap() {
 }
 
 function validation (formId) {
+    return false;
+    /* disabled the form validation
     if($('form#'+ formId +' .field-success')[0] ) $('form#'+ formId +' .field-success').remove();
     $('form#'+ formId +' .field-error').remove();
     $('form#'+ formId +' .form-control').removeClass('inputError');
@@ -675,7 +676,7 @@ function validation (formId) {
         }
     });
     
-    return hasError;
+    return hasError; **/
 }
 
 (function() {
@@ -716,6 +717,10 @@ function validation (formId) {
             };
         }
 
+        function _isEmptyField(field) {
+            return !field || field == "";
+        }
+
         function _initContactSend() {
             $scope.sendBusy = false;
             $scope.sendMail = function() {
@@ -723,7 +728,16 @@ function validation (formId) {
                 var name = $scope.contactName;
                 var phone = $scope.phoneNumber;
                 var message = $scope.message;
-                if (!message || message == "") {
+                $scope.nameMessage = $scope.emailMessage = $scope.errorMessage = null;
+                if (_isEmptyField(name)) {
+                    $scope.nameMessage = "Please provide your name!";
+                    return;
+                }
+                if (_isEmptyField(from) || from.indexOf('@') <= 0) {
+                    $scope.emailMessage = "Please provide valid email address!";
+                    return;
+                }
+                if (_isEmptyField(message)) {
                     $scope.errorMessage = "Please provide a message!";
                     return;
                 }
@@ -829,3 +843,20 @@ function validation (formId) {
     };
 })();
 
+(function() {
+    'use strict';
+    angular.module("app")
+        .directive('fieldError', fieldError);
+
+    function fieldError() {
+        return {
+            templateUrl: './templates/fieldError.html',
+            restrict: 'E',
+            replace: true,
+            transclude: true,
+            scope: {
+                message: '@'
+            }
+        };
+    };
+})();
