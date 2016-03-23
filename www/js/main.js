@@ -681,10 +681,13 @@ function validation (formId) {
 
 (function() {
     'use strict';
-    angular.module('app', []);
-
     angular
-        .module('app')
+        .module('app', [], ['$locationProvider', function($locationProvider) {
+            $locationProvider.html5Mode({
+                enabled: true,
+                rewriteLinks:false
+            });
+        }])
         .controller('controller', controller);
 
     controller.$inject = [
