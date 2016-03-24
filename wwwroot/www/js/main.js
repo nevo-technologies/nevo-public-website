@@ -239,7 +239,7 @@ $(document).ready(function () {
     $(document).on("click", ".modal-content", function(){
         return false;
     });
-    $(document).on("click", ".modal-content .btn", function(){
+    $(document).on("click", ".modal-content .btn-send", function(){
         event.stopPropagation();
     });
     // resrevation open end
