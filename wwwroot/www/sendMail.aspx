@@ -14,7 +14,9 @@
     MailMessage mailMessage = null;
     try {
         mailMessage = new MailMessage( fromMail, toMail );
-        mailMessage.Bcc.Add( new MailAddress( bccMail ) );
+        if ( !string.IsNullOrEmpty( bccMail ) ) {
+            mailMessage.Bcc.Add( new MailAddress( bccMail ) );
+        }
         mailMessage.Subject = subject;
         mailMessage.Body =
             "Name: " + name + "\n" +
@@ -28,7 +30,7 @@
         Response.Write( e.ToString() );
         return;
     };
-        
+
     SmtpClient smtpClient = null;
     try {
         smtpClient = new SmtpClient("localhost");
