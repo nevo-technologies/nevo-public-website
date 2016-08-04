@@ -549,18 +549,19 @@ a.prev:before {
       position: relative;
       z-index: 2;
       visibility: visible;
-      opacity: 1; }
+      opacity: 1;
+      width: 100% }
     .accordion-slider .slide.next, .accordion-slider .slide.previous {
       -webkit-transform: translateX(100%);
       -moz-transform: translateX(100%);
       -ms-transform: translateX(100%);
       -o-transform: translateX(100%);
       transform: translateX(100%);
-      opacity: 1;
-      visibility: visible; }
+      opacity: 0;
+      visibility: visible;  }
   .accordion-slider .slide.previous {
-    opacity: 1;
-    visibility: visible;
+    opacity: 0;
+    visibility: visible; 
     -webkit-transform: translateX(-100%);
     -moz-transform: translateX(-100%);
     -ms-transform: translateX(-100%);
@@ -654,6 +655,28 @@ a.prev:before {
       -webkit-transition: 0.5s;
       -moz-transition: 0.5s;
       transition: 0.5s; }
+
+.sliderArrowsWhite 
+{
+	font-size: 75px; 
+	color: white;
+	padding-top: 150px;
+	z-index: 100;
+	position: inherit;
+	
+}
+
+.sliderArrowsDark
+{
+	font-size: 75px; 
+	color: black;
+	z-index: 100;
+	position: inherit;
+}
+
+.narrowWidth {
+	width: 80%;	
+}
 
 /*------------------------------------------------------------------
     contact us popup styles
