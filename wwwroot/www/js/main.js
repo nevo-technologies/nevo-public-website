@@ -1,7 +1,7 @@
 ﻿
 // Smooth scroll
 uAgent = navigator.userAgent;
-isMobileDevice = true; // (/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(uAgent.toLowerCase()));
+isMobileDevice = (/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(uAgent.toLowerCase()));
 macOS = uAgent.match(/(iPad|iPhone|iPod|Macintosh)/g) ? true : false;
 mobileIE = uAgent.indexOf('IEMobile') !== -1;
 touch = false;
@@ -300,6 +300,8 @@ $(document).ready(function () {
                 loop: true,
                 dotsClass: "dark-slider-dots",
                 autoplay: !isMobileDevice,
+                arrowsClass: "sliderArrowsDark",
+                showArrows: !isMobileDevice,
             });
             allSliders.push(papersSlider);
         }
@@ -310,6 +312,8 @@ $(document).ready(function () {
                 dots: true,
                 loop: true,
                 autoplay: !isMobileDevice,
+                showArrows: !isMobileDevice,
+                arrowsClass: "sliderArrowsWhite",
             });
             allSliders.push(clientSlider);
         }
@@ -360,7 +364,7 @@ $(document).ready(function () {
 
     var tid = !isMobileDevice ? setInterval(autoStartSliders, 2500) : null;
     function autoStartSliders() {
-        if (openedModal || isMobileDevice)
+        if (openedModal) 
             return;
         var now = jQuery.now();
         var delayStart = 5000;
@@ -376,7 +380,7 @@ $(document).ready(function () {
         _.forEach(allSliders, function (slider) {
             var dontStart1 = slider.data.touchedClock > 0 && now - slider.data.touchedClock < delayStart;
             var dontStart2 = slider.data.stoppedClock > 0 && now - slider.data.stoppedClock < delayStart;
-            if (!dontStart1 && !dontStart2) {
+            if (!dontStart1 && !dontStart2 && slider.settings.autoplay) {
                 slider.play();
                 //console.log('started slider!');
             }
