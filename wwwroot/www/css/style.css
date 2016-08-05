@@ -660,17 +660,16 @@ a.prev:before {
 {
 	font-size: 75px; 
 	color: white;
-	padding-top: 150px;
 	z-index: 100;
 	position: inherit;
-	
+	padding: 5% 0;
 }
 
 .sliderArrowsDark
 {
 	font-size: 75px; 
 	color: black;
-	padding-top: 100px;
+	padding: 5% 0;
 	z-index: 100;
 	position: inherit;
 }
