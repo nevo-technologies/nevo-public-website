@@ -2025,7 +2025,8 @@ form#formSendFeedback-2 {
 -------------------------------------------------------------------*/
 .team .team-carousel {
   width: 100%;
-  overflow: hidden; }
+  overflow-x:auto;
+  }
   .team .team-carousel .team-lazy {
     margin: 0; }
 .team .team-body {
