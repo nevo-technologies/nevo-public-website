@@ -500,7 +500,7 @@ function initMap() {
             zoom: 16,
             scrollwheel: false,
             center: { lat: 42.374366, lng: -71.119987 },
-            mapId: 'IDc981788e2e5364fe'
+            mapId: 'c981788e2e5364fe'
         });
 
         // marker
