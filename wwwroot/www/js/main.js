@@ -495,101 +495,13 @@ function requestAnimation() {
 function initMap() {
     // google map init map
     function initialize() {
-        var mapStyle = [
-            {
-                "featureType": "administrative",
-                "elementType": "all",
-                "stylers": [
-                    {
-                        "visibility": "simplified"
-                    }
-                ]
-            },
-            {
-                "featureType": "landscape",
-                "elementType": "geometry",
-                "stylers": [
-                    {
-                        "visibility": "simplified"
-                    },
-                    {
-                        "color": "#fcfcfc"
-                    }
-                ]
-            },
-            {
-                "featureType": "poi",
-                "elementType": "geometry",
-                "stylers": [
-                    {
-                        "visibility": "simplified"
-                    },
-                    {
-                        "color": "#fcfcfc"
-                    }
-                ]
-            },
-            {
-                "featureType": "road.highway",
-                "elementType": "geometry",
-                "stylers": [
-                    {
-                        "visibility": "simplified"
-                    },
-                    {
-                        "color": "#dddddd"
-                    }
-                ]
-            },
-            {
-                "featureType": "road.arterial",
-                "elementType": "geometry",
-                "stylers": [
-                    {
-                        "visibility": "simplified"
-                    },
-                    {
-                        "color": "#dddddd"
-                    }
-                ]
-            },
-            {
-                "featureType": "road.local",
-                "elementType": "geometry",
-                "stylers": [
-                    {
-                        "visibility": "simplified"
-                    },
-                    {
-                        "color": "#eeeeee"
-                    }
-                ]
-            },
-            {
-                "featureType": "water",
-                "elementType": "geometry",
-                "stylers": [
-                    {
-                        "visibility": "simplified"
-                    },
-                    {
-                        "color": "#dddddd"
-                    }
-                ]
-            }
-        ];
-
-        var styledMap = new google.maps.StyledMapType(mapStyle,
-            {name: "Styled Map"});
-
+        // Map styling managed through Google Console
         map = new google.maps.Map(document.getElementById('map'), {
             zoom: 16,
             scrollwheel: false,
-            center: {lat: 42.374366, lng: -71.119987}
+            center: { lat: 42.374366, lng: -71.119987 },
+            mapId: 'IDc981788e2e5364fe'
         });
-
-        map.mapTypes.set('map_style', styledMap);
-        map.setMapTypeId('map_style');
 
         // marker
         marker = new google.maps.Marker({
