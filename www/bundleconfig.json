@@ -1,6 +1,6 @@
 [
   {
-    "outputFileName": "js/main.js",
+    "outputFileName": "js/main.min.js",
     "inputFiles": [
       "js/main.js"
     ]
