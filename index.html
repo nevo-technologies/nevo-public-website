@@ -15,7 +15,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <![endif]-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-    <base href="./" />
+    <script>
+      // Set <base href> dynamically so AngularJS html5Mode works in both the
+      // github.io preview URL (/nevo-public-website/) and the production URL (/).
+      document.write('<base href="' + location.pathname.replace(/[^/]*$/, '') + '"/>');
+    </script>
     <title>Nevo Technologies</title>
     <meta name="description" content="Nevo Technologies"/>
     <meta name="keywords" content="Nevo Technologies, Software Development, Project Managment, Professional Services"/>
@@ -696,7 +700,7 @@
                         name="Institute of Relevant Clinical Data"
                         industry="Health Care"
                         website="http://www.scamps.org/index.html"
-                        image-src="ircda-logo.png"
+                        image-src="IRCDA-logo.png"
                         image-alt="Institute of Relevant Clinical Data"
                         text="IRCDA engaged Nevo to create a prototype of a mobile application that enables clinicians to gauge their adherence to Care Protocols and assess treatment outcomes">
                 </case-study>
