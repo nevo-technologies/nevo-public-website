@@ -632,7 +632,7 @@ function validation (formId) {
 
         function _initTracking() {
             $scope.track = function(type, name) {
-                _gaq.push(['_trackEvent', type, name]);
+                gtag('event', type, { event_label: name });
             };
         }
 
@@ -660,29 +660,20 @@ function validation (formId) {
                     $scope.errorMessage = "Please provide a message!";
                     return;
                 }
-                var url = "./sendMail.aspx" +
-                    "?from=" + encodeURIComponent(from) +
-                    "&name=" + encodeURIComponent(name) +
-                    "&phone=" + encodeURIComponent(phone) +
-                    "&message=" + encodeURIComponent(message);
-                $scope.sendBusy = true;
-                $http.get(url).then(function (response) {
+                var subject = "Website contact from " + name;
+                var body = "Name: " + name + "\n" +
+                           "Email: " + from + "\n" +
+                           "Phone: " + (phone || "") + "\n\n" +
+                           message;
+                var mailto = "mailto:info@nevo.com" +
+                             "?subject=" + encodeURIComponent(subject) +
+                             "&body=" + encodeURIComponent(body);
+                $window.location.href = mailto;
+                $scope.goodMessage = "Opening your email client...";
+                $timeout(function () {
+                    $scope.goodMessage = undefined;
                     $scope.message = "";
-                    var badResponse = !response || !response.data || response.data.substring(0,1) == '<';
-                    if (badResponse)
-                        $scope.badMessage = "Unable to send your message!";
-                    else
-                        $scope.goodMessage = "Thank You! Your message was sent successfully!";
-                }, function (error) {
-                    if (error) console.log(error);
-                    $scope.badMessage = "Oh! Sorry but something bad happened and we could not send your message!"
-                }).finally(function () {
-                    $timeout(function () {
-                        $scope.sendBusy = false;
-                        $scope.goodMessage = $scope.errorMessage = $scope.badMessage = undefined;
-                        $scope.message = "";
-                    }, 30000)
-                });
+                }, 5000);
             }
         }
 
@@ -728,7 +719,7 @@ function validation (formId) {
             },
             link: function(scope, element) {
                 scope.track = function(type, name) {
-                    _gaq.push(['_trackEvent', type, name]);
+                    gtag('event', type, { event_label: name });
                 };
             }
         };
@@ -755,7 +746,7 @@ function validation (formId) {
             },
             link: function(scope, element) {
                 scope.track = function(type, name) {
-                    _gaq.push(['_trackEvent', type, name]);
+                    gtag('event', type, { event_label: name });
                 };
             }
         };
