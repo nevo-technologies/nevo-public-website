@@ -20,6 +20,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Build
+        run: |
+          npm install --no-save terser
+          npx terser js/main.js -o js/main.min.js --compress --mangle
+
       - name: Stage site contents
         run: |
           mkdir -p _site
