@@ -944,7 +944,7 @@
                                         <textarea class="form-control message" name="u_text" placeholder="Message"
                                                   ng-model="message" rows="4" ng-change="typingMessage()"></textarea>
                                 <input class="btn btn-primary inverse-btn" type="button" value="Send"
-                                       ng-click="sendMail()" />
+                                       ng-click="sendMail()" ng-disabled="sendBusy" />
                                 <field-error message="{{errorMessage}}"></field-error>
                             </div>
                         </div>

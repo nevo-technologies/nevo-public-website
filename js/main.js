@@ -660,20 +660,29 @@ function validation (formId) {
                     $scope.errorMessage = "Please provide a message!";
                     return;
                 }
-                var subject = "Website contact from " + name;
-                var body = "Name: " + name + "\n" +
-                           "Email: " + from + "\n" +
-                           "Phone: " + (phone || "") + "\n\n" +
-                           message;
-                var mailto = "mailto:info@nevo.com" +
-                             "?subject=" + encodeURIComponent(subject) +
-                             "&body=" + encodeURIComponent(body);
-                $window.location.href = mailto;
-                $scope.goodMessage = "Opening your email client...";
-                $timeout(function () {
-                    $scope.goodMessage = undefined;
+                $scope.sendBusy = true;
+                $http.post('https://formsubmit.co/ajax/info@nevo.com', {
+                    name: name,
+                    email: from,
+                    phone: phone || '',
+                    message: message,
+                    _subject: 'Website contact from ' + name
+                }).then(function(response) {
                     $scope.message = "";
-                }, 5000);
+                    if (response && response.data && response.data.success)
+                        $scope.goodMessage = "Thank You! Your message was sent successfully!";
+                    else
+                        $scope.badMessage = "Unable to send your message!";
+                }, function(error) {
+                    if (error) console.log(error);
+                    $scope.badMessage = "Oh! Sorry but something bad happened and we could not send your message!";
+                }).finally(function() {
+                    $timeout(function() {
+                        $scope.sendBusy = false;
+                        $scope.goodMessage = $scope.errorMessage = $scope.badMessage = undefined;
+                        $scope.message = "";
+                    }, 30000);
+                });
             }
         }
 
