@@ -1,6 +1,22 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
+	<script>
+	  // Defend against stale browser-cached 301s from the pre-migration apex redirect.
+	  // The old Helicon ISAPI_Rewrite rule on the Atlassian server (before the 2026
+	  // GitHub Pages cutover) emitted "Location: https://www.nevo.com//" — a double
+	  // slash — for http://nevo.com/. Browsers cached that 301 aggressively, so
+	  // returning visitors can still land here at a path starting with "//". GitHub
+	  // Pages serves index.html for that path without normalizing it, and the dynamic
+	  // <base href> below would then resolve assets against a broken base. Detect and
+	  // bounce to a clean single-slash URL before anything else runs.
+	  (function () {
+	    if (/^\/\/+/.test(location.pathname)) {
+	      var clean = '/' + location.pathname.replace(/^\/+/, '');
+	      location.replace(clean + location.search + location.hash);
+	    }
+	  })();
+	</script>
 	<!-- Google tag (gtag.js) -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-SP8C1H41LB"></script>
 	<script>
