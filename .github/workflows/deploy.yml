@@ -36,7 +36,6 @@ jobs:
             --exclude '.git' \
             --exclude '.github' \
             --exclude '_site' \
-            --exclude 'wwwroot' \
             --exclude 'node_modules' \
             ./ _site/
           mkdir -p _site/includes

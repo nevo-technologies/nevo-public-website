@@ -1,1 +1,0 @@
-svnversion > www\includes\version.txt
